@@ -1,12 +1,70 @@
-# Web and DB Project Template - Level 3
+# Group planning website
 
-A template project and documentation for an NCEA Level 3 digital media and database project
+by Chittranuch Tangitcharoen (Mimi)
 
-See the [template details](docs/template.md) and the [setup guide](docs/setup.md).
 
 ---
 
-> **Delete this file and REPLACE IT with one for your project!**
->
-> See the [README-template.md](docs/README-template.md) file in the docs folder
+## Project Description
+
+This project arose from the problem within the International Student Leader group. There are many events happening within the international department that needs lots of conversations and meetings.
+
+- Users are able to sign-up, login, and logout of the app
+- Users can see groups that they are part of, whether it is a casual friend group or leaders group
+- Within each group, they can see name, details, and date of the events that are happening.
+- Each user is allowed to vote for days that they are free to participate in the events
+- Users can create groups, and admin of the group are allowed to make changes or add events.
+
+
+
+---
+
+## Project Links
+
+- [GitHub repo for the project](https://github.com/waimea-mtangitcharoen/300dtd-internationa-planning-website-project.)
+- [Live web app](https://...)
+
+
+---
+
+## Project Files
+
+- Program source code can be found in the [app](app/) folder
+- Project documentation is in the [docs](docs/) folder, including:
+   - [Project requirements](docs/0-requirements.md)
+   - Development sprints:
+      - [Sprint 1](docs/1-sprint-1-prototype.md) - Development of a prototype
+      - [Sprint 2](docs/2-sprint-2-mvp.md) - Development of a minimum viable product (MVP)
+      - [Sprint 3](docs/3-sprint-3-refinement.md) - Final refinements
+   - [Final review](docs/4-review.md)
+   - [Setup guide](docs/setup.md) - Project and hosting setup
+
+---
+
+## Project Details
+
+This is a digital media and database project for **NCEA Level 3**, assessed against standards [91902](docs/as91902.pdf) and [91903](docs/as91903.pdf).
+
+The project is a web app that uses [Flask](https://flask.palletsprojects.com) for the server back-end, connecting to a SQLite database. The final deployment of the app is on [Render](https://render.com/), with the database hosted at [Turso](https://turso.tech/).
+
+The app uses [Jinja2](https://jinja.palletsprojects.com/templates/) templating for structuring pages and data, and [PicoCSS](https://picocss.com/) as the starting point for styling the web front-end.
+
+The project demonstrates a number of **complex database techniques**:
+- Structuring the data using multiple tables
+- Creating queries which insert, update or delete to modify data
+- Creating customised data displays from multiple tables (e.g. web pages)
+- Dynamically linking data between the database and a front-end display
+- Applying data access permissions as appropriate to the outcome
+
+The project demonstrates a number of **complex digital media (web) techniques**:
+- Using non-core functionality
+- Using sophisticated digital effects
+- Applying industry standards or guidelines
+- Using responsive design for use on multiple devices
+- The integration of original media assets
+- Using dynamic data handling and interactivity
+- Automation through scripts
+
+** EDIT THESE LISTS ABOVE TO MATCH YOUR PROJECT**
+
 
