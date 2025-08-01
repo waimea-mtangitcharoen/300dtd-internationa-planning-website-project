@@ -22,6 +22,7 @@ This project arose from the problem within the International Student Leader grou
 ## Project Links
 
 - [GitHub repo for the project](https://github.com/waimea-mtangitcharoen/300dtd-internationa-planning-website-project.)
+- [Project Documentation](https://waimea-mtangitcharoen.github.io/300dtd-internationa-planning-website-project/)
 - [Live web app](https://...)
 
 
