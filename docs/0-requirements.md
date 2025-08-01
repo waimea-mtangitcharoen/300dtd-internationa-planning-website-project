@@ -2,17 +2,23 @@
 
 ## Identified Problem or Need
 
-Replace this text with a clearly stated problem or need that exists that your project will attempt to solve / fulfil.
+There are many events happening within the international department, so we international leaders have to meet up to brainstorm ideas and help orgainizing events. However, it is very difficult to find out which day or time people are free for a meeting, and get very confusing when communicating via instagram chat (like having to scroll through chat or creating a poll).
 
 
 ## End-User Requirements
 
-Replace this text with a description of your typical end-users and their specific needs / expectations / requirements.
+The product is for a group of international student leaders, so it must be easy to use, does not require much time to complete something within the app, has a simple user interface.
 
 
 ## Proposed Solution
 
-Replace this text with a brief statement about the system that you intend to create, including the key functionality it should have.
+I want to create an app/website that allows me to organize what's happening in the our group efficiently.
+- Users are able to sign-up, login, and logout of the app.
+- Users can cutomize their own profile (?)
+- Users can see groups that they are part of, whether it is a casual friend group or leaders group.
+- Within each group, they can see name, details, and date of the events that are happening.
+- Each user is allowed to vote for days that they are free to participate in the events.
+- Users can create groups, and admin of the group are allowed to make changes or add events.
 
 
 ---
