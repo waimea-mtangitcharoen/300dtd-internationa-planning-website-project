@@ -25,73 +25,69 @@ I want to create an app/website that allows me to organize what's happening in t
 
 # Relevant Implications
 
-## Functionality
+## Functionality implication
 
-Replace this text with a clear explanation of what the implication means.
-
-### Relevance to the System
-
-Replace this text with an explanation of why the implication is relevant to this particular project.
-
-### Impact / Considerations
-
-Replace this text with an explanation of what you will need to consider moving forward and how the project will be impacted by this implication.
-
-
-
-## Usability
-
-Replace this text with a clear explanation of what the implication means.
+It is related to how well my website works and whether it meets the end-user requirement.
 
 ### Relevance to the System
 
-Replace this text with an explanation of why the implication is relevant to this particular project.
+If the website is not functional, then the user will not be able to create task, groups or vote for when they are free. This does not solve the problem I have identified.
 
 ### Impact / Considerations
 
-Replace this text with an explanation of what you will need to consider moving forward and how the project will be impacted by this implication.
+I must check the funtionality of the website regularly. This can be done by inputting fake data into the database or completing the form to see if it is shown on the website or try enter a group code to see if I am able to join the group. My final test for functionality should include trialing and testing every steps of using the website.
 
 
 
-## Aesthetic
+## Usability implication
 
-Replace this text with a clear explanation of what the implication means.
+This implication determines whether the website is easy to use for the end-users, and get things they want to do on the website done quickly.
 
 ### Relevance to the System
 
-Replace this text with an explanation of why the implication is relevant to this particular project.
+The website is a planning website, which means the user should not be spending a long time on the website. They should be able to quickly uand easily use the website, otherwise this will no solve the problem occuring as it might take longer time than just chatting and figuring out when people are free.
 
 ### Impact / Considerations
 
-Replace this text with an explanation of what you will need to consider moving forward and how the project will be impacted by this implication.
+I will need a strong feedback from my end-user by letting them use my website. I have to consider whether users are tapping on too many buttons before they can complete each step and ensure that the UI is quick and easy to use (consider using icons that match system and the real world so they understand thesystem quicker).
 
 
+## Aesthetic implication
 
-## NAME OF IMPLICATION 4
-
-Replace this text with a clear explanation of what the implication means.
+It relates to the appearance/design of the website.
 
 ### Relevance to the System
 
-Replace this text with an explanation of why the implication is relevant to this particular project.
+The aesthetic is what users see, so it can either attract the user to use the website or make them feel uncomfortable if this is not done considerately.
 
 ### Impact / Considerations
 
-Replace this text with an explanation of what you will need to consider moving forward and how the project will be impacted by this implication.
+End-user feedback will be crucial, as they are the people using the website. The layout, colors and text font are things that need to be considered carefully to ensure that the user feels comfortable using the website.
 
 
+## End-user implication
 
-## NAME OF IMPLICATION 5
-
-Replace this text with a clear explanation of what the implication means.
+The implication ensures that the website created meets the end-users purpose.
 
 ### Relevance to the System
 
-Replace this text with an explanation of why the implication is relevant to this particular project.
+The website is mainly created to solve the problem from the users, so if it does not meet the end-user implication, the website is useless.
 
 ### Impact / Considerations
 
-Replace this text with an explanation of what you will need to consider moving forward and how the project will be impacted by this implication.
+I have to keep in mind while creating the website what the purpose is. Users feedback is needed to see whether there are my website has anything that is redundant/does not meet the requirement.
+
+## Accessibility implication
+
+This involve ensuring that all end-users are able to access the app/website.
+
+### Relevance to the System
+
+
+
+### Impact / Considerations
+
+Users should be able access my website through any devices. Mobile phone is used the most within my user group and it tends to be the most convenient device as well. So, my first priority is to make sure that users are able to access website through their phones, then later extend it to desktop or 
 
 
 ---

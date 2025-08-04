@@ -14,7 +14,7 @@ Develop a prototype that simulates the key functionality of the system, then tes
 
 Replace this text with notes regarding the DB design.
 
-![SCREENSHOT OF DB DESIGN](screenshots/example.png)
+![Original DB design](screenshots/0_DB.png)
 
 
 ### Required Data Input
@@ -28,6 +28,14 @@ Replace this text with a description of the outputs for the system - what types 
 ### Required Data Processing
 
 Replace this text with a description of how the data will be processed to achieve the desired output(s) - any processes / formulae?
+
+## Final Database design
+
+After talking to my end-users (other international students leaders), they prefer entering a code to join a group, rather than admin inviting people into the group when he/she create a group.
+
+![Final DB design](screenshots/1_DB.png)
+
+A new field "code" has been added to the group table of the database. This is to store the unique code generated for each group and make sure that they do not match.
 
 
 ---
