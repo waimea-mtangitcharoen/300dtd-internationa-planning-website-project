@@ -12,22 +12,43 @@ Develop a prototype that simulates the key functionality of the system, then tes
 
 ## Initial Database Design
 
-Replace this text with notes regarding the DB design.
+This initial database design contains 5 tables: users, membership, votes, groups, events, and options. These tables are linked together either by 1:N or N:N relatioship, and work together to allow information about users, groups, and events to be stored in the database and allow some actions to happen.
 
 ![Original DB design](screenshots/0_DB.png)
 
 
 ### Required Data Input
 
-Replace this text with a description of what data will be input, and where / how it will be obtained.
+Admin users will provide:
+- Information about the group (via create group form)
+- Information about events (via add event form)
+
+Normal users will provide:
+- Basic personal information of the international student leaders (name, username, password) (via sign-up form)
 
 ### Required Data Output
 
-Replace this text with a description of the outputs for the system - what types of data will be displayed?
+Admin users will see:
+- Name/profile of the user
+- List of groups (that they are part of or have created)
+- List of events associate to that group, with details/description and date shown.
+- Results from the poll-vote and usernames of normal users
+
+Normal users will see:
+- List of groups (that they are part of)
+- List of events assocaite to each group, with details/description and date shown.
+- Results from the poll-vote and usernames of normal users.
+
+Note that the data output for both types of users are very similar. However, admin users are capable to do more actions than normal users (some buttons or functionality will only appear for admin users).
+
 
 ### Required Data Processing
 
-Replace this text with a description of how the data will be processed to achieve the desired output(s) - any processes / formulae?
+Users can only access the website only if they can log-in. So, username and password input via log-in form must be compared to what is stored in users table of the database.
+
+List of groups will be displayed differently for each user, as they are part of different group. So, a query is required to run though the membership table and match the user id with the group id.
+
+For the list of events for each group, the database must sorted only events with the "group_id" that match the "id" of the groups table.
 
 ## Final Database design
 
