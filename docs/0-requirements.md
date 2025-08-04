@@ -94,41 +94,40 @@ Users should be able access my website through any devices. Mobile phone is used
 
 # User Experience (UX) Principles
 
-## NAME OF UX PRINCIPLE 1
+## Findable
 
-Replace this text with a clear explanation of what the principle means.
-
-### Relevance to the System
-
-Replace this text with an explanation of why the principle is relevant to this particular project.
-
-### Impact / Considerations
-
-Replace this text with an explanation of what you will need to consider moving forward and how the project will be impacted by this principle.
-
-
-## NAME OF UX PRINCIPLE 2
-
-Replace this text with a clear explanation of what the principle means.
+System should be easy to navigate through, so users can find content they need. 
 
 ### Relevance to the System
 
-Replace this text with an explanation of why the principle is relevant to this particular project.
+This reduces the time users need to spend on the app, reduces confusion and gives users a better experience using the website. 
 
 ### Impact / Considerations
 
-Replace this text with an explanation of what you will need to consider moving forward and how the project will be impacted by this principle.
+ I should consider using icons like a door for log-out or a plus sign for adding groups/events. This will help users recognize the content they are looking for quicker. 
 
 
-## NAME OF UX PRINCIPLE 3
+## Contrast
 
-Replace this text with a clear explanation of what the principle means.
+There is a contrast between content on the page, especially things like background color and text color.
 
 ### Relevance to the System
 
-Replace this text with an explanation of why the principle is relevant to this particular project.
+A nice contrast on the website can improve users’ experience when using the website as it can invoke their emotions. If, for example, the font color blends it with the background color, users will find it hard to read the content and leave the site immediately because their eyes become uncomfortable.
 
 ### Impact / Considerations
 
-Replace this text with an explanation of what you will need to consider moving forward and how the project will be impacted by this principle.
+The main color for my user’s interface is blue, so I have to make sure that I use different shades of blue for different parts. This is especially with the text and the background color. If my background color is a light color, then my text color must be in a dark color or vice versa. 
 
+
+## Consistency
+
+The system is consistent with other systems that the users have used before. 
+
+### Relevance to the System
+
+It relates to the user’s emotion and familiarity with the website. It can make users feel more comfortable using the website and know how to navigate through the website quickly. 
+
+### Impact / Considerations
+
+I must keep the layout simple and use icons that are commonly used, make sense, and can be seen on other sites. The design for each page should be similar and appear the same regardless of the devices the users use to access. 
