@@ -46,9 +46,9 @@ Note that the data output for both types of users are very similar. However, adm
 
 Users can only access the website only if they can log-in. So, username and password input via log-in form must be compared to what is stored in users table of the database.
 
-List of groups will be displayed differently for each user, as they are part of different group. So, a query is required to run though the membership table and match the user id with the group id.
+List of groups will be displayed differently for each user, as they are part of different group. So, a query is required to run through the membership table and match the user id with the group id.
 
-For the list of events for each group, the database must sorted only events with the "group_id" that match the "id" of the groups table.
+For the list of events for each group, the database must sorted only events with the "group_id" of the events table that match the "id" of the groups table.
 
 ## Final Database design
 
@@ -61,47 +61,36 @@ A new field "code" has been added to the group table of the database. This is to
 
 ---
 
-## UI 'Flow'
+## Initial UI prototype
 
 The first stage of prototyping was to explore how the UI might 'flow' between states, based on the required functionality.
 
 This Figma demo shows the initial design for the UI 'flow':
 
-**FIGMA FLOW - PLACE THE FIGMA EMBED CODE HERE - MAKE SURE IT IS SET SO THAT EVERYONE CAN ACCESS IT**
+<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="400" height="600" src="https://embed.figma.com/proto/rQzjfoJis2WS7K63ukgTPP/website-v1?node-id=4-2&p=f&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=4%3A2&embed-host=share" allowfullscreen></iframe>
+
 
 ### Testing
 
-Replace this text with notes about what you did to test the UI flow and the outcome of the testing.
+I used the flow myself to make sure that the website has no dead-end and let my end-user used it as well.
 
 ### Changes / Improvements
 
-Replace this text with notes any improvements you made as a result of the testing.
+My end-user were ok with the UI flow. However, I gave them 2 options of ways that they can join the group. 
+1. Let the admin (person who creates the group) invites the members by using a drop down menu with a list of people on the form (this is also my initial thought and what my first prototype was based on).
+2. Let the system generates a uniquee code for the group to the admin, and the admin can pass that on to other people to enter and join the group (I recall that some of the websites use this method, so I put it out as an alternative option).
+
+It turned out that my end-users like the second method better. They think it is easier to do so rather inviting all the people, and it would mean anyone can join at anytime if they have the code as well.
+
+This means that I will need another buttons and page to allow user to ente that code, and a flow that links them back to the group page but with that group that they have just joined display as well.
+
+One of the leader also noted that the log-out button should not be there, as it can be very easy for her to hit it accidently and therefore means she has to log-in again
 
 *IMPROVED FIGMA FLOW - PLACE THE FIGMA EMBED CODE HERE - MAKE SURE IT IS SET SO THAT EVERYONE CAN ACCESS IT*
 
 
 ---
 
-## Initial UI Prototype
-
-The next stage of prototyping was to develop the layout for each screen of the UI.
-
-This Figma demo shows the initial layout design for the UI:
-
-*FIGMA PROTOTYPE - PLACE THE FIGMA EMBED CODE HERE - MAKE SURE IT IS SET SO THAT EVERYONE CAN ACCESS IT*
-
-### Testing
-
-Replace this text with notes about what you did to test the UI flow and the outcome of the testing.
-
-### Changes / Improvements
-
-Replace this text with notes any improvements you made as a result of the testing.
-
-*FIGMA IMPROVED PROTOTYPE - PLACE THE FIGMA EMBED CODE HERE - MAKE SURE IT IS SET SO THAT EVERYONE CAN ACCESS IT*
-
-
----
 
 ## Refined UI Prototype
 
