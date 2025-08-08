@@ -74,19 +74,41 @@ This Figma demo shows the initial design for the UI 'flow':
 
 I used the flow myself to make sure that the website has no dead-end and let my end-user used it as well.
 
-### Changes / Improvements
+### Changes 1
 
 My end-user were ok with the UI flow. However, I gave them 2 options of ways that they can join the group. 
 1. Let the admin (person who creates the group) invites the members by using a drop down menu with a list of people on the form (this is also my initial thought and what my first prototype was based on).
-2. Let the system generates a uniquee code for the group to the admin, and the admin can pass that on to other people to enter and join the group (I recall that some of the websites use this method, so I put it out as an alternative option).
+2. Let the system generates a unique code for the group to the admin, and the admin can pass that on to other people to enter and join the group (I recall that some of the websites use this method, so I put it out as an alternative option).
 
-It turned out that my end-users like the second method better. They think it is easier to do so rather inviting all the people, and it would mean anyone can join at anytime if they have the code as well.
+It turned out that my end-users like the second method better. They think it is easier to do so rather than inviting all the people, and it would mean anyone can join at anytime if they have the code.
 
-This means that I will need another buttons and page to allow user to ente that code, and a flow that links them back to the group page but with that group that they have just joined display as well.
+This means that I will need another buttons and page to allow user to enter that code, and a flow that links them back to the group page but with that group that they have just joined display too.
 
-One of the leader also noted that the log-out button should not be there, as it can be very easy for her to hit it accidently and therefore means she has to log-in again
+One of the leader also pointed out that the log-out button should not be there, as it can be very easy for her to hit it accidently and therefore means she has to log-in again.
+
+To sum up, I need to:
+1. Create a page and buttons for users to join a group.
+2. Place the log-out button somewhere else and come up with a navigation bar layout.
 
 *IMPROVED FIGMA FLOW - PLACE THE FIGMA EMBED CODE HERE - MAKE SURE IT IS SET SO THAT EVERYONE CAN ACCESS IT*
+
+### Changes 2
+I came out with 2 different options for the position of navigation bar:
+1. Place all the buttons at the bottom, and sensitive buttons like log-out is hidden with in the 3 dots button.
+2. The action buttons are all hidden in the menu icon, which means if the users want to access any tools, they must tap the menu icon on the top right of the page.
+
+![Navigation bar options](screenshots/navigation_option.png)
+
+I asked my end-users to choose which one they like better. They all prefer the second one, with a reason that it is much more neat and clear.
+
+<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="400" height="700" src="https://embed.figma.com/proto/kbbRc4nmNYt9AFNVTR4UA7/navigation-bar-final?node-id=1-2&p=f&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A2&embed-host=share" allowfullscreen></iframe>
+
+After this, I went on to add the join group page and fixed the flow.
+
+<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="400" height="700" src="https://embed.figma.com/proto/lniGx1Cf6cHL2mNWW8Al6X/website-v6?node-id=6-104&p=f&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=4%3A2&embed-host=share" allowfullscreen></iframe>
+
+Tools available on each page are different, and it also depends on whether you are an admin/owner of the group or not
+
 
 
 ---
