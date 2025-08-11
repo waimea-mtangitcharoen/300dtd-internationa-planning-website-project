@@ -50,13 +50,17 @@ List of groups will be displayed differently for each user, as they are part of 
 
 For the list of events for each group, the database must sorted only events with the "group_id" of the events table that match the "id" of the groups table.
 
-## Final Database design
+## Database design improvement
 
 After talking to my end-users (other international students leaders), they prefer entering a code to join a group, rather than admin inviting people into the group when he/she create a group.
 
 ![Final DB design](screenshots/1_DB.png)
 
 A new field "code" has been added to the group table of the database. This is to store the unique code generated for each group and make sure that they do not match.
+
+The data type for username (users table) and owner (groups table) are wrong, They both should be text and not integer.
+
+![Alt text](screenshots/2_DB.png)
 
 
 ---

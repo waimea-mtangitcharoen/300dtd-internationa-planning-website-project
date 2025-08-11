@@ -87,7 +87,7 @@ This involve ensuring that all end-users are able to access the app/website.
 
 ### Impact / Considerations
 
-Users should be able access my website through any devices. Mobile phone is used the most within my user group and it tends to be the most convenient device as well. So, my first priority is to make sure that users are able to access website through their phones, then later extend it to desktop or 
+Users should be able access my website through any devices. Mobile phone is used the most within my user group and it tends to be the most convenient device. So, my first priority is to make sure that users are able to access website through their phones, then later extend it to desktop or ipad
 
 
 ---
