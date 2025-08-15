@@ -29,20 +29,18 @@ init_datetime(app)  # Handle UTC dates in timestamps
 
 
 #-----------------------------------------------------------
-# Home page route
+#Login page route
 #-----------------------------------------------------------
 @app.get("/")
 def index():
+    return render_template("pages/login.jinja")
+
+#-----------------------------------------------------------
+#Login page route
+#-----------------------------------------------------------
+@app.get("/home")
+def home():
     return render_template("pages/home.jinja")
-
-
-#-----------------------------------------------------------
-# About page route
-#-----------------------------------------------------------
-@app.get("/about/")
-def about():
-    return render_template("pages/about.jinja")
-
 
 #-----------------------------------------------------------
 # Things page route - Show all the things, and new thing form
@@ -159,9 +157,9 @@ def delete_a_thing(id):
 #-----------------------------------------------------------
 # User registration form route
 #-----------------------------------------------------------
-@app.get("/register")
-def register_form():
-    return render_template("pages/register.jinja")
+@app.get("/sign_up")
+def sign_up_form():
+    return render_template("pages/sign_up.jinja")
 
 
 #-----------------------------------------------------------
@@ -207,7 +205,7 @@ def add_user():
 
         # Found an existing record, so prompt to try again
         flash("Username already exists. Try again...", "error")
-        return redirect("/register")
+        return redirect("/sign_up")
 
 
 #-----------------------------------------------------------
@@ -240,7 +238,7 @@ def login_user():
 
                 # And head back to the home page
                 flash("Login successful", "success")
-                return redirect("/")
+                return redirect("/home")
 
         # Either username not found, or password was wrong
         flash("Invalid credentials", "error")

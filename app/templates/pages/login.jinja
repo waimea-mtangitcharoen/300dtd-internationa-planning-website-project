@@ -1,6 +1,8 @@
 {#=====================================================
-  User Login page
-  - Form for logging in
+  Home page
+  - Hero style greeting banner
+  - List of things passed in as 'things' array
+  - Form for adding a new thing
 =====================================================#}
 
 {% extends 'pages/base.jinja' %}
@@ -8,17 +10,16 @@
 
 {% block title %}
 
-    Flask Demo - Login
+    Flask Demo
 
 {% endblock %}
-
 
 {% block content %}
 
     <article>
 
         <header>
-            <h2>Login...</h2>
+            <h2>Login</h2>
         </header>
 
         <form action="/login-user" method="POST">
@@ -37,15 +38,14 @@
                 required
             >
 
-            <button>Login</button>
+            <button>Log in</button>
 
         </form>
 
-        <footer>
-            Or, if you don't have an account, <a href="/register">register</a>
-        </footer>
-
     </article>
+
+
+    Or <a href="/sign_up" role="button">Sign-up</a>
 
 {% endblock %}
 

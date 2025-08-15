@@ -62,6 +62,10 @@ The data type for username (users table) and owner (groups table) are wrong, The
 
 ![Alt text](screenshots/2_DB.png)
 
+The data type for the owner (groups table) is wrong. It should match the data type of the id of the users table as it acts as the foreign key, so I have to update my database.
+
+![Alt text](screenshots/3_DB.png)
+
 
 ---
 
