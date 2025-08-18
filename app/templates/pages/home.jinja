@@ -14,7 +14,29 @@
 
 {% endblock %}
 
+{% block menu %}
+
+  <ul>
+    <li><a href="\create_group" class="menu">Create</a></li>
+    <li><a href="\join_group" class="menu">Join</a></li>
+
+    {% if session.user_id %}
+      <li><a href="/logout">Logout</a></li>
+
+    {% else %}
+     
+    {% endif %}
+  </ul>
+
+{% endblock %}
+
+
+
 {% block content %}
+
+  <strong>Welcome, {{ session.user_name }}</strong>
+
+
 
 
 {% endblock %}

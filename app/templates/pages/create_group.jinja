@@ -1,0 +1,35 @@
+{% extends 'pages/base.jinja' %}
+
+
+{% block content %}
+
+    <article>
+
+        <header>
+            <h2>Create group</h2>
+        </header>
+
+        <form action="/create-group" method="POST">
+
+            <input
+                type="text"
+                name="name"
+                placeholder="Name"
+                required
+            >
+
+            <input
+                type="text"
+                name="description"
+                placeholder="Description"
+                required
+            >
+
+            <button>Create</button>
+
+        </form>
+
+    </article>
+
+{% endblock %}
+

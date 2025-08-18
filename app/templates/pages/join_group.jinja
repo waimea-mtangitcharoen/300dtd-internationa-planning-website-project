@@ -1,0 +1,29 @@
+{% extends 'pages/base.jinja' %}
+
+    <article>
+
+        <header>
+            <h2>Join a group</h2>
+        </header>
+
+        <form action="/join-group" method="POST">
+
+            <input
+                type="text"
+                name="username"
+                placeholder="Username"
+                required
+            >
+
+            <button>Join</button>
+
+        </form>
+
+    </article>
+
+
+
+
+
+
+{% endblock %}

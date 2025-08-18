@@ -237,12 +237,27 @@ def login_user():
                 session["logged_in"] = True
 
                 # And head back to the home page
-                flash("Login successful", "success")
                 return redirect("/home")
 
         # Either username not found, or password was wrong
         flash("Invalid credentials", "error")
         return redirect("/login")
+
+    
+#-----------------------------------------------------------
+# User create form route
+#-----------------------------------------------------------
+@app.get("/create_group")
+def create_group_form():
+    return render_template("pages/create_group.jinja")
+
+
+#-----------------------------------------------------------
+# User create form route
+#-----------------------------------------------------------
+@app.get("/join_group")
+def join_group_form():
+    return render_template("pages/join_group.jinja")
 
 
 #-----------------------------------------------------------
@@ -255,7 +270,6 @@ def logout():
     session.pop("user_name", None)
     session.pop("logged_in", None)
 
-    # And head back to the home page
-    flash("Logged out successfully", "success")
+    # And head back to the login page
     return redirect("/")
 

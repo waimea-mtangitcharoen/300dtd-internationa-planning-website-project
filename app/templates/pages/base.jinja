@@ -34,28 +34,7 @@
     <header>
         <nav>
             {% block header %}{% endblock %}
-
-            <ul>
-                <li><strong><a href="/">Planner App</a></strong></li>
-            </ul>
-
-            <ul>
-                {% if session.user_name %}
-
-                    <li>Hello, {{ session.user_name }}</li>
-
-                {% endif %}
-
-                {% if session.user_id %}
-
-                    <li><a href="/logout">Logout</a></li>
-
-                {% else %}
-
-                    
-                {% endif %}
-
-            </ul>
+            {% block menu %}{%  endblock %}
         </nav>
     </header>
 
