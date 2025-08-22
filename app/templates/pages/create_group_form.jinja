@@ -1,5 +1,11 @@
 {% extends 'pages/base.jinja' %}
 
+{% block header %}
+
+    <a role="button" href="/home">Back</a>
+
+{% endblock %}
+
 
 {% block content %}
 
@@ -15,13 +21,6 @@
                 type="text"
                 name="name"
                 placeholder="Name"
-                required
-            >
-
-            <input
-                type="text"
-                name="description"
-                placeholder="Description"
                 required
             >
 

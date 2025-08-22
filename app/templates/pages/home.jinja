@@ -17,8 +17,9 @@
 {% block menu %}
 
   <ul>
-    <li><a href="\create_group" class="menu">Create</a></li>
-    <li><a href="\join_group" class="menu">Join</a></li>
+
+    <li><a href="\create-group-form" class="menu">Create</a></li>
+    <li><a href="\join-group-form" class="menu">Join</a></li>
 
     {% if session.user_id %}
       <li><a href="/logout">Logout</a></li>
@@ -26,18 +27,34 @@
     {% else %}
      
     {% endif %}
+
   </ul>
 
 {% endblock %}
 
-
-
 {% block content %}
 
-  <strong>Welcome, {{ session.user_name }}</strong>
+  <h1><strong>Welcome, {{ session.user_name }}</strong></h1>
 
+  <article>
 
+        <ul>
+            {% for group in groups %}
 
+                <li>
+                    <a href="/events/{{ group.id }}" role="button">
+                        <strong>{{ group.name }}</strong>
+                    </a>
+                </li>
+
+            {% else %}
+
+                <p>None!</p>
+
+            {% endfor %}
+        </ul>
+
+  </article>
 
 {% endblock %}
 

@@ -1,5 +1,13 @@
 {% extends 'pages/base.jinja' %}
 
+{% block header %}
+
+    <a role="button" href="/home"><strong>←</strong></a>
+
+{% endblock %}
+
+{% block content %}
+
     <article>
 
         <header>
@@ -10,8 +18,8 @@
 
             <input
                 type="text"
-                name="username"
-                placeholder="Username"
+                name="group code"
+                placeholder="Group code"
                 required
             >
 
@@ -20,10 +28,5 @@
         </form>
 
     </article>
-
-
-
-
-
 
 {% endblock %}

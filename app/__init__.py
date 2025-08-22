@@ -9,6 +9,8 @@
 from flask import Flask, render_template, request, flash, redirect, session
 from werkzeug.security import generate_password_hash, check_password_hash
 import html
+import random
+import string
 
 from app.helpers.session import init_session
 from app.helpers.db      import connect_db
@@ -35,12 +37,28 @@ init_datetime(app)  # Handle UTC dates in timestamps
 def index():
     return render_template("pages/login.jinja")
 
+
 #-----------------------------------------------------------
 #Login page route
 #-----------------------------------------------------------
 @app.get("/home")
+@login_required
 def home():
-    return render_template("pages/home.jinja")
+    with connect_db() as client:
+        # Get all the groups from the DB
+        sql = """
+            SELECT groups.name
+
+            FROM groups
+
+
+            ORDER BY groups.name ASC
+        """
+        params=[]
+        result = client.execute(sql, params)
+        groups = result.rows
+
+    return render_template("pages/home.jinja", groups=groups)
 
 #-----------------------------------------------------------
 # Things page route - Show all the things, and new thing form
@@ -157,7 +175,7 @@ def delete_a_thing(id):
 #-----------------------------------------------------------
 # User registration form route
 #-----------------------------------------------------------
-@app.get("/sign_up")
+@app.get("/sign-up")
 def sign_up_form():
     return render_template("pages/sign_up.jinja")
 
@@ -247,17 +265,45 @@ def login_user():
 #-----------------------------------------------------------
 # User create form route
 #-----------------------------------------------------------
-@app.get("/create_group")
+@app.get("/create-group-form")
 def create_group_form():
-    return render_template("pages/create_group.jinja")
+    return render_template("pages/create_group_form.jinja")
 
 
 #-----------------------------------------------------------
-# User create form route
+# Route for creating a group when create form submitted
 #-----------------------------------------------------------
-@app.get("/join_group")
+@app.post("/create-group")
+@login_required
+def create_group():
+    # Get the data from the form
+    name = request.form.get("name")
+
+    # Sanitise the name
+    name = html.escape(name)
+
+    with connect_db() as client:
+        # Get user id from session
+        user_id = session["user_id"]
+
+        # Generate a random join code
+        code = ''.join(random.choice(string.ascii_letters) for _ in range(5))
+
+        # Add the group to the groups table
+        sql = "INSERT INTO groups (name, owner, code) VALUES (?, ?, ?)"
+        params = [name, user_id, code]
+        client.execute(sql, params)
+
+        return redirect("/home")
+
+
+
+#-----------------------------------------------------------
+# User join form route
+#-----------------------------------------------------------
+@app.get("/join-group-form")
 def join_group_form():
-    return render_template("pages/join_group.jinja")
+    return render_template("pages/join_group_form.jinja")
 
 
 #-----------------------------------------------------------
