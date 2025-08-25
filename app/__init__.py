@@ -33,28 +33,37 @@ init_datetime(app)  # Handle UTC dates in timestamps
 #-----------------------------------------------------------
 #Login page route
 #-----------------------------------------------------------
-@app.get("/")
-def index():
-    return render_template("pages/login.jinja")
+# @app.get("/")
+# def index():
+#     return render_template("pages/login.jinja")
 
 
 #-----------------------------------------------------------
 #Login page route
 #-----------------------------------------------------------
-@app.get("/home")
-@login_required
+@app.get("/")
 def home():
+    if not session.get("logged_in"):
+        return redirect("/login")
+
     with connect_db() as client:
         # Get all the groups from the DB
         sql = """
-            SELECT groups.name
+            SELECT 
+                groups.id,
+                groups.name
 
             FROM groups
+            JOIN membership ON groups.id = membership.group_id
 
+            WHERE membership.user_id=?
 
             ORDER BY groups.name ASC
         """
-        params=[]
+        # get our user id from the session
+        uid = session["user_id"]
+        # Get the groups we belong to
+        params=[uid]
         result = client.execute(sql, params)
         groups = result.rows
 
@@ -172,6 +181,99 @@ def delete_a_thing(id):
 
 
 
+    
+#-----------------------------------------------------------
+# User create form route
+#-----------------------------------------------------------
+@app.get("/group/new")
+def create_group_form():
+    return render_template("pages/group_create_form.jinja")
+
+
+#-----------------------------------------------------------
+# Route for creating a group when create form submitted
+#-----------------------------------------------------------
+@app.post("/group")
+@login_required
+def create_group():
+    # Get the data from the form
+    name = request.form.get("name")
+
+    # Sanitise the name
+    name = html.escape(name)
+
+    with connect_db() as client:
+        # Get user id from session
+        user_id = session["user_id"]
+
+        # Generate a random join code
+        code = ''.join(random.choice(string.ascii_letters) for _ in range(5))
+
+        # Add the group to the groups table
+        sql = "INSERT INTO groups (name, owner, code) VALUES (?, ?, ?)"
+        params = [name, user_id, code]
+        result = client.execute(sql, params)
+        new_group_id = result.last_insert_rowid
+
+        # Add us to the group as a member
+        sql = "INSERT INTO membership (group_id, user_id) VALUES (?, ?)"
+        params = [new_group_id, user_id]
+        client.execute(sql, params)
+
+        return redirect("/")
+
+
+
+#-----------------------------------------------------------
+# User join form route
+#-----------------------------------------------------------
+@app.get("/group/join")
+def join_group_form():
+    return render_template("pages/group_join_form.jinja")
+
+
+#-----------------------------------------------------------
+# Root for event page
+#-----------------------------------------------------------
+@app.get("/events/<int:id>")
+def event(id):
+    if not session.get("logged_in"):
+        return redirect("/login")
+
+    with connect_db() as client:
+        # Get all the groups from the DB
+        sql = """
+            SELECT 
+                events.id,
+                events.name,
+                events.date,
+                events.description
+
+            FROM events
+            JOIN groups ON events.group_id = groups.id
+
+            WHERE membership.user_id=?
+
+            ORDER BY events.date ASC
+        """
+        # get our group id from the session
+        gid = session["id"]
+        # Get the groups we belong to
+        params=[gid]
+        result = client.execute(sql, params)
+        groups = result.rows
+
+    return render_template("pages/group_events.jinja")
+
+
+
+
+
+
+
+
+
+
 #-----------------------------------------------------------
 # User registration form route
 #-----------------------------------------------------------
@@ -255,56 +357,11 @@ def login_user():
                 session["logged_in"] = True
 
                 # And head back to the home page
-                return redirect("/home")
+                return redirect("/")
 
         # Either username not found, or password was wrong
         flash("Invalid credentials", "error")
         return redirect("/login")
-
-    
-#-----------------------------------------------------------
-# User create form route
-#-----------------------------------------------------------
-@app.get("/create-group-form")
-def create_group_form():
-    return render_template("pages/create_group_form.jinja")
-
-
-#-----------------------------------------------------------
-# Route for creating a group when create form submitted
-#-----------------------------------------------------------
-@app.post("/create-group")
-@login_required
-def create_group():
-    # Get the data from the form
-    name = request.form.get("name")
-
-    # Sanitise the name
-    name = html.escape(name)
-
-    with connect_db() as client:
-        # Get user id from session
-        user_id = session["user_id"]
-
-        # Generate a random join code
-        code = ''.join(random.choice(string.ascii_letters) for _ in range(5))
-
-        # Add the group to the groups table
-        sql = "INSERT INTO groups (name, owner, code) VALUES (?, ?, ?)"
-        params = [name, user_id, code]
-        client.execute(sql, params)
-
-        return redirect("/home")
-
-
-
-#-----------------------------------------------------------
-# User join form route
-#-----------------------------------------------------------
-@app.get("/join-group-form")
-def join_group_form():
-    return render_template("pages/join_group_form.jinja")
-
 
 #-----------------------------------------------------------
 # Route for processing a user logout
