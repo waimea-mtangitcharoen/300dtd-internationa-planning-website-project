@@ -1,2 +1,37 @@
+{#=====================================================
+  Thing page
+  - Shows details of a single thing
+  - Has a delete link to remove it
+=====================================================#}
+
 {% extends 'pages/base.jinja' %}
 
+
+{% block title %}
+
+    Flask Demo - Single Thing
+
+{% endblock %}
+
+
+{% block content %}
+
+    <h1>{{ events.name }}</h1>
+
+
+    <article>
+
+        <header>
+            <h3>{{ events.name }}</h3>
+        </header>
+
+        <p></p>
+
+
+
+    </article>
+
+
+    <a role="button" href="/">Back to groups</a>
+
+{% endblock %}

@@ -236,11 +236,14 @@ def join_group_form():
 # Root for event page
 #-----------------------------------------------------------
 @app.get("/events/<int:id>")
-def event(id):
+def show_all_events(id):
     if not session.get("logged_in"):
         return redirect("/login")
+    
+    session.get("groups.id")
 
     with connect_db() as client:
+
         # Get all the groups from the DB
         sql = """
             SELECT 
@@ -252,18 +255,18 @@ def event(id):
             FROM events
             JOIN groups ON events.group_id = groups.id
 
-            WHERE membership.user_id=?
+            WHERE groups.id=?
 
             ORDER BY events.date ASC
         """
-        # get our group id from the session
-        gid = session["id"]
+        # # get our group id from the session
+        # gid = session["group_id"]
         # Get the groups we belong to
-        params=[gid]
+        params=[id]
         result = client.execute(sql, params)
-        groups = result.rows
+        events = result.rows
 
-    return render_template("pages/group_events.jinja")
+    return render_template("pages/group_events.jinja", events=events)
 
 
 
