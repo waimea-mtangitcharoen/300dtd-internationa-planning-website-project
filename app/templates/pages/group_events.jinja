@@ -9,27 +9,44 @@
 
 {% block title %}
 
-    Flask Demo - Single Thing
+    Events for Group {{ group.name }}
 
 {% endblock %}
 
 
 {% block content %}
 
-    <h1>{{ events.name }}</h1>
+  <article>
 
+    <h1>Group {{ group.name }}</h1>
 
-    <article>
+    <table>
+        <thead>
+            <tr>
+                <th>Event</th>
+                <th>Date</th>
+                <th></th>
+            </tr>
+        </thead>
 
-        <header>
-            <h3>{{ events.name }}</h3>
-        </header>
+        <tbody>
+        {% for event in events %}
 
-        <p></p>
+            <tr>
+                <td><strong>{{ event.name }}</strong></td>
+                <td>{{ event.date }}</td>
+                <td><a href="#" role="button">View</a>
+            </tr>
 
+        {% else %}
 
+            <p>None!</p>
 
-    </article>
+        {% endfor %}
+        </tbody>
+    </table>
+
+  </article>
 
 
     <a role="button" href="/">Back to groups</a>

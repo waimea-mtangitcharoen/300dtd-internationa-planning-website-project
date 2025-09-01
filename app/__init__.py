@@ -235,38 +235,54 @@ def join_group_form():
 #-----------------------------------------------------------
 # Root for event page
 #-----------------------------------------------------------
-@app.get("/events/<int:id>")
+@app.get("/group/<int:id>")
 def show_all_events(id):
     if not session.get("logged_in"):
         return redirect("/login")
     
-    session.get("groups.id")
+    # session.get("groups.id")
 
     with connect_db() as client:
 
         # Get all the groups from the DB
         sql = """
             SELECT 
-                events.id,
-                events.name,
-                events.date,
-                events.description
-
-            FROM events
-            JOIN groups ON events.group_id = groups.id
-
-            WHERE groups.id=?
-
-            ORDER BY events.date ASC
+                groups.id,
+                groups.name
+            FROM groups
+            WHERE id=?
         """
-        # # get our group id from the session
-        # gid = session["group_id"]
-        # Get the groups we belong to
         params=[id]
         result = client.execute(sql, params)
-        events = result.rows
 
-    return render_template("pages/group_events.jinja", events=events)
+        if result.rows:
+            group = result.rows[0]
+
+            # Get all the groups from the DB
+            sql = """
+                SELECT 
+                    events.id,
+                    events.name,
+                    events.date,
+                    events.description
+
+                FROM events
+                JOIN groups ON events.group_id = groups.id
+
+                WHERE groups.id=?
+
+                ORDER BY events.date ASC
+            """
+
+            # Get the groups we belong to
+            params=[id]
+            result = client.execute(sql, params)
+            events = result.rows
+
+            return render_template("pages/group_events.jinja", group=group, events=events)
+        
+        else:
+            return not_found_error()
 
 
 
