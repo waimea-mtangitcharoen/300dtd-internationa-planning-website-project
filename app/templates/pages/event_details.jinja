@@ -1,0 +1,43 @@
+{% extends 'pages/base.jinja' %}
+
+
+{% block title %}
+
+    {{ event.name }} details
+
+{% endblock %}
+
+
+{% block content %}
+
+  <article>
+
+    <h1>{{ event.name }}</h1>
+
+        <tbody>
+        {% for event in events %}
+
+        {# Do the details, summary thing #}
+
+        <p>{{ event.description }}</p>
+        <p>{{ event.date }}</p>
+        <p>{{ event.option_1 }}</p>
+        <p>{{ event.option_2 }}</p>
+        <p>{{ event.option_3 }}</p>
+        <p>{{ event.option_4 }}</p>
+        <p>{{ event.option_5 }}</p>
+
+        {% else %}
+
+            <p>None!</p>
+
+        {% endfor %}
+        </tbody>
+    </table>
+
+  </article>
+
+
+    <a role="button" href="/">Back to groups</a>
+
+{% endblock %}

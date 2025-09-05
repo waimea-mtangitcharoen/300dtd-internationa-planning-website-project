@@ -258,6 +258,7 @@ def show_all_events(id):
         if result.rows:
             group = result.rows[0]
 
+            # If date is blank then make the box editable and show on the events page
             # Get all the groups from the DB
             sql = """
                 SELECT 
@@ -283,6 +284,47 @@ def show_all_events(id):
         
         else:
             return not_found_error()
+        
+    
+
+#-----------------------------------------------------------
+# Root for event details page
+#-----------------------------------------------------------
+@app.get("/event/<int:id>")
+def show_an_event(id):
+    with connect_db() as client:
+        # Get the thing details from the DB, including the owner info
+        sql = """
+            SELECT  events.id,
+                    events.name,
+                    events.date,
+                    events.description,
+                    events.option_1,
+                    events.option_2,
+                    events.option_3,
+                    events.option_4,
+                    events.option_5
+
+            FROM events
+            JOIN groups ON events.group_id = groups.id 
+
+            WHERE events.id=?
+        """
+        params = [id]
+        result = client.execute(sql, params)
+
+        # Did we get a result?
+        if result.rows:
+            # yes, so show it on the page
+            event = result.rows[0]
+            return render_template("pages/event_details.jinja", event=event)
+
+        else:
+            # No, so show error
+            return not_found_error()
+        
+      
+
 
 
 
