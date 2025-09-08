@@ -428,6 +428,7 @@ def login_user():
 # Route for processing a user logout
 #-----------------------------------------------------------
 @app.get("/logout")
+@login_required
 def logout():
     # Clear the details from the session
     session.pop("user_id", None)

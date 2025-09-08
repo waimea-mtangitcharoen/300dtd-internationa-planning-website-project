@@ -14,10 +14,13 @@ Replace this text with notes regarding the DB schema.
 
 ![SCREENSHOT OF DB SCHEMA](screenshots/example.png)
 
+Options 1-5 colums are added to the events table. This gives options for the user to vote , and limit the maximum options at 5. This also allow the owner of the group to input choices they want to answer the question (e.g. options for where and when would be different).
+
+Options columns are added to the votes table. This will count and show the number of that votes.
 
 ---
 
-## Initial Implementation
+## Initial Implementation (the whole thing)
 
 The key functionality of the web app was implemented:
 
@@ -26,7 +29,43 @@ The key functionality of the web app was implemented:
 
 ---
 
-## Testing FEATURE NAME HERE
+## Login
+
+User should be able to login to their account. I need to test:
+- The user can login (compare their username and password hash to that of the database), which then takes them to the home page of the website/app.
+- If the username or password is invalid, the user will not be able to log in.
+This can be tested by implementing a random username and password manually through the database, and try logging in with these information using the login form.
+Replace this text with notes about what you are testing, how you tested it, and the outcome of the testing
+
+**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE TESTING HERE**
+
+### Changes / Improvements
+
+Replace this text with notes any improvements you made as a result of the testing.
+
+**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE IMPROVED SYSTEM HERE**
+
+
+---
+
+## Log out
+
+User can log out of their account (so others can login or to keep the privacy). The test can be done by clicking the log out button, and this should take the user back to the log in page.
+
+**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE TESTING HERE**
+
+It seem that the log out button works. However, the user can use the browser's back button to return to the login page too and the website appears to be loading for logging in forever. This doesn't follow the functionality heuristic.
+
+### Changes / Improvements
+
+Replace this text with notes any improvements you made as a result of the testing.
+
+**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE IMPROVED SYSTEM HERE**
+
+
+---
+
+## Sign up
 
 Replace this text with notes about what you are testing, how you tested it, and the outcome of the testing
 
@@ -41,7 +80,7 @@ Replace this text with notes any improvements you made as a result of the testin
 
 ---
 
-## Testing FEATURE NAME HERE
+## Create group
 
 Replace this text with notes about what you are testing, how you tested it, and the outcome of the testing
 
@@ -56,37 +95,7 @@ Replace this text with notes any improvements you made as a result of the testin
 
 ---
 
-## Testing FEATURE NAME HERE
-
-Replace this text with notes about what you are testing, how you tested it, and the outcome of the testing
-
-**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE TESTING HERE**
-
-### Changes / Improvements
-
-Replace this text with notes any improvements you made as a result of the testing.
-
-**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE IMPROVED SYSTEM HERE**
-
-
----
-
-## Testing FEATURE NAME HERE
-
-Replace this text with notes about what you are testing, how you tested it, and the outcome of the testing
-
-**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE TESTING HERE**
-
-### Changes / Improvements
-
-Replace this text with notes any improvements you made as a result of the testing.
-
-**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE IMPROVED SYSTEM HERE**
-
-
----
-
-## Testing FEATURE NAME HERE
+## Events page
 
 Replace this text with notes about what you are testing, how you tested it, and the outcome of the testing
 
