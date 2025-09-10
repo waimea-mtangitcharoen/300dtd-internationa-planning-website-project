@@ -67,6 +67,8 @@ Replace this text with notes any improvements you made as a result of the testin
 
 ## Sign up
 
+The user is able to sign up if they have not yet done that. The sign up button should take the user to the sign up form page. To test this, I can try sign up and login with those credentials. I should be able to login after signing up as my data has been stored in the database.
+
 Replace this text with notes about what you are testing, how you tested it, and the outcome of the testing
 
 **PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE TESTING HERE**

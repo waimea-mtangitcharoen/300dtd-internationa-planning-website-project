@@ -13,6 +13,25 @@
 
 {% endblock %}
 
+{% block menu %}
+
+  <ul>
+
+    <li><a href="/group/new" class="menu">Create group</a></li>
+    <li><a href="/event/new" class="menu">Create event</a></li>
+    <li><a href="/group/join" class="menu">Join</a></li>
+
+    {% if session.user_id %}
+      <li><a href="/logout">Logout</a></li>
+
+    {% else %}
+     
+    {% endif %}
+
+  </ul>
+
+{% endblock %}
+
 
 {% block content %}
 
