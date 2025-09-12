@@ -33,4 +33,17 @@
 #messages .message.success { color: var(--pico-color-green-500); }
 #messages .message.error   { color: var(--pico-color-red-500); }
 
+nav ul {
+    display: none;
+}
+
+#main_nav input:checked ~ ul {
+    display: flexbox;
+
+}
+
+#main_nav input {
+    display: none;           /* Hide the checkbox */
+}
+
 

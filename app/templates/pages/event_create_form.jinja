@@ -1,0 +1,96 @@
+{% extends 'pages/base.jinja' %}
+
+{% block header %}
+
+    <a role="button" href="/">Back</a>
+
+{% endblock %}
+
+
+{% block content %}
+
+    <article>
+
+        <header>
+            <h2>Create event</h2>
+        </header>
+
+        <form action="/event" method="POST">
+
+            <label>
+                Name
+                <input
+                    type="text"
+                    name="name"
+                    placeholder="Name"
+                    required
+                >
+            </label>
+
+            <input 
+                type="date" 
+                name="date" 
+                min="{{ today }}"
+                aria-label="Date"
+            >
+
+            <input
+                type="text"
+                name="description"
+                placeholder="Description"
+                required
+            >
+
+            <input
+                type="text"
+                name="question"
+                placeholder="Question"
+                required
+            >
+
+            <fieldset>
+                <legend>Voting Options</legend>
+                
+                <input
+                    type="text"
+                    name="option 1"
+                    placeholder="Option 1"
+                    required
+                >
+
+                <input
+                    type="text"
+                    name="option 2"
+                    placeholder="Option 2"
+                    required
+                >
+
+                <input
+                    type="text"
+                    name="option 3"
+                    placeholder="Option 3"
+                    required
+                >
+
+                <input
+                    type="text"
+                    name="option 4"
+                    placeholder="Option 4"
+                    required
+                >
+
+                <input
+                    type="text"
+                    name="option 5"
+                    placeholder="Option 5"
+                    required
+                >
+            </fieldset>
+
+            <button>Create</button>
+
+        </form>
+
+    </article>
+
+{% endblock %}

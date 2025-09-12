@@ -11,6 +11,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 import html
 import random
 import string
+import datetime
 
 from app.helpers.session import init_session
 from app.helpers.db      import connect_db
@@ -183,7 +184,7 @@ def delete_a_thing(id):
 
     
 #-----------------------------------------------------------
-# User create form route
+# User create group form route
 #-----------------------------------------------------------
 @app.get("/group/new")
 def create_group_form():
@@ -323,8 +324,43 @@ def show_an_event(id):
             # No, so show error
             return not_found_error()
         
-      
+ #-----------------------------------------------------------
+# User create event form route
+#-----------------------------------------------------------     
+@app.get("/event/new")
+def create_event_form():
+    today = datetime.date.today()
+    return render_template("pages/event_create_form.jinja", today=today)
 
+#-----------------------------------------------------------
+# Route for creating an event when create form submitted
+#-----------------------------------------------------------
+@app.post("/event")
+@login_required
+def create_event():
+    # Get the data from the form
+    name = request.form.get("name")
+
+    # Sanitise the name
+    name = html.escape(name)
+
+    with connect_db() as client:
+        # Get user id from session
+        user_id = session["user_id"]
+
+
+        # Add the event to the events table
+        sql = "INSERT INTO events (name, owner) VALUES (?, ?)"
+        params = [name, user_id]
+        result = client.execute(sql, params)
+        new_group_id = result.last_insert_rowid
+
+        # Add us to the group as a member
+        sql = "INSERT INTO membership (group_id, user_id) VALUES (?, ?)"
+        params = [new_group_id, user_id]
+        client.execute(sql, params)
+
+        return redirect("/")
 
 
 
