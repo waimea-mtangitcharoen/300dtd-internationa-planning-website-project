@@ -86,13 +86,17 @@ Replace this text with notes any improvements you made as a result of the testin
 
 Any user can create a group. Each group has got a unique code that can shared to other people to join the group. I will test this by creating the group myself. The expected outcome is that the gorup added is shown on the group page, and a unique code has been generated. 
 
-**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE TESTING HERE**
+![Alt text](create_group_1.gif)
 
-This still needs to be improve. The unique code should be placed somewhere for the owner to see only.
+Once the 'add" button is hit, user is taken back to the home page and the "New Group 8" can be display on the screen. However, I think i have chosen it to appear as ascending order, but it this is not convenient because if there are many groups, the user has to scroll to find the new group that has been added. It should be the first group on the very top after it has been added.
+
+
+The unique code should also be placed somewhere for the owner to see only.
 
 ### Changes / Improvements
-
-Replace this text with notes any improvements you made as a result of the testing.
+This is when ordering the groups added have been fixed.
+The "New Group 9" is shown on the top of the group list.
+![Alt text](create_group_2.gif)
 
 **PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE IMPROVED SYSTEM HERE**
 

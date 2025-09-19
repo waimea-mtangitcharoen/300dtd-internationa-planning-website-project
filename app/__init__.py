@@ -59,7 +59,7 @@ def home():
 
             WHERE membership.user_id=?
 
-            ORDER BY groups.name ASC
+            ORDER BY groups.id DESC
         """
         # get our user id from the session
         uid = session["user_id"]
