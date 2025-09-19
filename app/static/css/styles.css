@@ -3,20 +3,8 @@
 =====================================================*/
 
 
-/* ABOUT PAGE -------------------------------------------- */
-
-#tech-stack {
-    display: flex;
-    gap: 1rem;
-    align-items: flex-start;
-}
-
-#tech-stack article {
-    flex: 1;
-}
-
-
 /* MESSAGES -------------------------------------------- */
+
 
 #messages ul {
     width: fit-content;
@@ -33,17 +21,47 @@
 #messages .message.success { color: var(--pico-color-green-500); }
 #messages .message.error   { color: var(--pico-color-red-500); }
 
-nav ul {
+/* HEADER -------------------------------------------- */
+
+body > header {
+    border-bottom: 1px solid #000;
+    background-color: #ccc;
+}
+
+body > header [role="button"] {
+    padding: 0.25rem 0.5rem;
+}
+
+
+/* MENU -------------------------------------------- */
+
+body > header > nav > ul {
     display: none;
 }
 
-#main_nav input:checked ~ ul {
-    display: flexbox;
-
+body > header > nav input:checked ~ ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 10rem;
+    background-color: #ddd;
+    padding: 1rem;
+    box-shadow: 0 0 2rem #0008;
 }
 
-#main_nav input {
+body > header > nav input:checked ~ ul li {
+    padding: 0;
+    width: 100%;
+}
+
+body > header > nav input {
     display: none;           /* Hide the checkbox */
 }
+
 
 

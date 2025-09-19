@@ -14,16 +14,20 @@
 
 {% endblock %}
 
+{% block header %}
+
+    Flask Demo
+
+{% endblock %}
+
 {% block menu %}
 
-  <nav id="main_nav">
-
-    <label for="menu_toggle">&#9776;</label>
+    <label role="button" for="menu_toggle">&#9776;</label>
     <input id="menu_toggle" type="checkbox">
 
     <ul>
     
-      <li><label for="menutoggle">&#10005;</label></li>
+      <li><label for="menu_toggle">&#10005;</label></li>
       <li><a href="/group/new" class="menu">Create</a></li>
       <li><a href="/group/join" class="menu">Join</a></li>
 
@@ -35,8 +39,6 @@
       {% endif %}
 
     </ul>
-
-  </nav>
 
 {% endblock %}
 

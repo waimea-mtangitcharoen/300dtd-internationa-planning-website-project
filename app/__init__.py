@@ -340,6 +340,12 @@ def create_event_form():
 def create_event():
     # Get the data from the form
     name = request.form.get("name")
+    date = request.form.get("date")
+    description = request.form.get("description")
+    question = request.form.get("question")
+    
+    #Voting options
+    option_1 = request.form.get("option_1")
 
     # Sanitise the name
     name = html.escape(name)
