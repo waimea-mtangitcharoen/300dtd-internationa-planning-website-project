@@ -162,19 +162,29 @@ def add_a_thing():
 #-----------------------------------------------------------
 @app.get("/delete/<int:id>")
 @login_required
-def delete_a_thing(id):
+def delete_a_group(id):
     # Get the user id from the session
-    user_id = session["user_id"]
+    # user_id = session["user_id"]
 
     with connect_db() as client:
-        # Delete the thing from the DB only if we own it
-        sql = "DELETE FROM things WHERE id=? AND user_id=?"
-        params = [id, user_id]
+        # Delete the group from the DB only if we own it
+        sql = "DELETE FROM groups WHERE id=?"
+        params = [id]
         client.execute(sql, params)
 
+        sql = "DELETE FROM membership WHERE group_id=?"
+        params = [id]
+        client.execute(sql, params)
+
+        sql = "DELETE FROM events WHERE group_id=?"
+        params = [id]
+        client.execute(sql, params)
+
+
+
         # Go back to the home page
-        flash("Thing deleted", "success")
-        return redirect("/things")
+        flash("Group deleted", "success")
+        return redirect("/")
 
 
 

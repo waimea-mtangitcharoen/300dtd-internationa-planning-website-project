@@ -148,6 +148,49 @@ Replace this text with notes any improvements you made as a result of the testin
 
 ---
 
+## Delete group
+
+Users are allowed to delete the group.
+
+These are the data in my database tables before deleting a group.
+I am testing the functionality of my delete function by deleting "TEST 2"
+![Alt text](image-1.png)
+![Alt text](image-2.png)
+
+![Alt text](delete_group_2.gif)
+
+Here is what my table look like after the group TEST 2 has been deleted.
+
+![Alt text](image-3.png)
+![Alt text](image-4.png)
+![Alt text](image-5.png)
+It makes sense that if the group is deleted, then the events in that group are also removed from the database, and is the same with the membership table. So fixed this manually with more sql commands.
+
+Here is what it looks like aftef commands have been added.
+Membership table before:
+![Alt text](image-6.png)
+
+Events table before::
+![Alt text](image-7.png)
+
+After deleting another group "TEST" (where group_id = 1):
+Membership table after:
+![Alt text](image-8.png)
+
+Events table after:
+![Alt text](image-9.png)
+
+At the moment, anyone can delete the group but it would be more efficient if only the owner of the group can delete the group.
+
+### Changes / Improvements
+
+Replace this text with notes any improvements you made as a result of the testing.
+
+**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE IMPROVED SYSTEM HERE**
+
+
+---
+
 ## Sprint Review
 
 Replace this text with a statement about how the sprint has moved the project forward - key success point, any things that didn't go so well, etc.
