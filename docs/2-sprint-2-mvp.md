@@ -124,6 +124,10 @@ This page shows all the events added to that group. To test this, I add some eve
 
 ![Alt text](image.png)
 
+Whilw trying to created an event, I have noticed that the question box appeared as null. This should not be the case since the owner might want to provide the information only.
+
+![Alt text](image-10.png)
+
 ### Changes / Improvements
 
 Replace this text with notes any improvements you made as a result of the testing.
@@ -181,6 +185,8 @@ Events table after:
 ![Alt text](image-9.png)
 
 At the moment, anyone can delete the group but it would be more efficient if only the owner of the group can delete the group.
+
+
 
 ### Changes / Improvements
 

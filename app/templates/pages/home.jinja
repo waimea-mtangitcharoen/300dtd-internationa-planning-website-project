@@ -55,11 +55,13 @@
                     <a href="/group/{{ group.id }}" role="button">
                         <strong>{{ group.name }}</strong>
 
-                        {# {% if session.user_id and (group.user_id == session.user_id) %} #}
+                        {% if session.user_id == group.owner %}
 
                           <a href="/delete/{{ group.id }}" onclick="return confirm('Really delete?');">D</a>
 
-                        {# {% else %} #}
+                        {% else %}
+
+                        {% endif %}
                     </a>
 
 

@@ -52,7 +52,8 @@ def home():
         sql = """
             SELECT 
                 groups.id,
-                groups.name
+                groups.name,
+                groups.owner
 
             FROM groups
             JOIN membership ON groups.id = membership.group_id
@@ -164,26 +165,31 @@ def add_a_thing():
 @login_required
 def delete_a_group(id):
     # Get the user id from the session
-    # user_id = session["user_id"]
+    user_id = session["user_id"]
 
     with connect_db() as client:
         # Delete the group from the DB only if we own it
-        sql = "DELETE FROM groups WHERE id=?"
-        params = [id]
-        client.execute(sql, params)
+        sql = "DELETE FROM groups WHERE id=? AND owner=?"
+        params = [id,user_id]
+        result = client.execute(sql, params)
 
-        sql = "DELETE FROM membership WHERE group_id=?"
-        params = [id]
-        client.execute(sql, params)
+        if result.rows_affected == 1:
+            # Group was deleted, so remove associated members and events
 
-        sql = "DELETE FROM events WHERE group_id=?"
-        params = [id]
-        client.execute(sql, params)
+            sql = "DELETE FROM membership WHERE group_id=?"
+            params = [id]
+            client.execute(sql, params)
 
+            sql = "DELETE FROM events WHERE group_id=?"
+            params = [id]
+            client.execute(sql, params)
 
+            flash("Group deleted", "success")
+
+        else:
+            flash("Group could not be deleted", "error")
 
         # Go back to the home page
-        flash("Group deleted", "success")
         return redirect("/")
 
 
@@ -356,6 +362,10 @@ def create_event():
     
     #Voting options
     option_1 = request.form.get("option_1")
+    option_2 = request.form.get("option_2")
+    option_3 = request.form.get("option_3")
+    option_4 = request.form.get("option_4")
+    option_5 = request.form.get("option_5")
 
     # Sanitise the name
     name = html.escape(name)
@@ -366,17 +376,13 @@ def create_event():
 
 
         # Add the event to the events table
-        sql = "INSERT INTO events (name, owner) VALUES (?, ?)"
-        params = [name, user_id]
+        sql = "INSERT INTO events (name, date, description, question, option_1, option_2, option_3, option_4, option_5) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)"
+        params = [name, date, description, question, option_1, option_2, option_3, option_4, option_5]
         result = client.execute(sql, params)
-        new_group_id = result.last_insert_rowid
+        new_event_id = result.last_insert_rowid
 
-        # Add us to the group as a member
-        sql = "INSERT INTO membership (group_id, user_id) VALUES (?, ?)"
-        params = [new_group_id, user_id]
-        client.execute(sql, params)
 
-        return redirect("/")
+        return redirect("/group/")
 
 
 
