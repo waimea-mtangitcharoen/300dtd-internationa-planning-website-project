@@ -216,7 +216,7 @@ def create_group():
     # Get the data from the form
     name = request.form.get("name")
 
-    # Sanitise the name
+    # Sanitise the name so the user cannot try to break the website
     name = html.escape(name)
 
     with connect_db() as client:
@@ -343,17 +343,17 @@ def show_an_event(id):
  #-----------------------------------------------------------
 # User create event form route
 #-----------------------------------------------------------     
-@app.get("/event/new")
-def create_event_form():
+@app.get("/group/<int:id>/newevent")
+def create_event_form(id):
     today = datetime.date.today()
-    return render_template("pages/event_create_form.jinja", today=today)
+    return render_template("pages/event_create_form.jinja", today=today, group_id=id)
 
 #-----------------------------------------------------------
 # Route for creating an event when create form submitted
 #-----------------------------------------------------------
-@app.post("/event")
+@app.post("/group/<int:id>/newevent")
 @login_required
-def create_event():
+def create_event(id):
     # Get the data from the form
     name = request.form.get("name")
     date = request.form.get("date")
@@ -367,22 +367,27 @@ def create_event():
     option_4 = request.form.get("option_4")
     option_5 = request.form.get("option_5")
 
-    # Sanitise the name
+    # Sanitise any text data
     name = html.escape(name)
+    description = html.escape(description)
+    question = html.escape("question")
+    option_1 = html.escape("option_1")
+    option_2 = html.escape("option_2")
+    option_3 = html.escape("option_3")
+    option_4 = html.escape("option_4")
+    option_5 = html.escape("option_5")
 
     with connect_db() as client:
-        # Get user id from session
-        user_id = session["user_id"]
-
+    
+        group_id = id
 
         # Add the event to the events table
-        sql = "INSERT INTO events (name, date, description, question, option_1, option_2, option_3, option_4, option_5) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)"
-        params = [name, date, description, question, option_1, option_2, option_3, option_4, option_5]
+        sql = "INSERT INTO events (name, date, description, group_id, question, option_1, option_2, option_3, option_4, option_5) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
+        params = [name, date, description, group_id, question, option_1, option_2, option_3, option_4, option_5]
         result = client.execute(sql, params)
-        new_event_id = result.last_insert_rowid
 
 
-        return redirect("/group/")
+        return redirect("/group")
 
 
 

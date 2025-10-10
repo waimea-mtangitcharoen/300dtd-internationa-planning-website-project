@@ -126,7 +126,16 @@ This page shows all the events added to that group. To test this, I add some eve
 
 Whilw trying to created an event, I have noticed that the question box appeared as null. This should not be the case since the owner might want to provide the information only.
 
+
+
 ![Alt text](image-10.png)
+
+![Alt text](create_event_1.gif)
+ This shows that the new event, "Math help" appear in the "Math help" group. Images below shows that the new event has been added to the database:
+ ![Alt text](image-11.png)
+ ![Alt text](image-12.png)
+
+ One thing that has to be fixed is that once the new event has been added, the user should be taken back to the event page, not the home page (this tells them immediately that the new event has been added). Mr. Copley complained about the inconsistency of the menu, so this has to be fixed real soon.
 
 ### Changes / Improvements
 
