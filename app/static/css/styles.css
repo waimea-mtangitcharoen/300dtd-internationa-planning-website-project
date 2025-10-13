@@ -26,6 +26,8 @@
 body > header {
     border-bottom: 1px solid #000;
     background-color: #ccc;
+    position: sticky;
+    top:0;
 }
 
 body > header [role="button"] {
@@ -35,11 +37,19 @@ body > header [role="button"] {
 
 /* MENU -------------------------------------------- */
 
-body > header > nav > ul {
+body > header > nav h1 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+body > header > nav {
+    align-items: center;
+}
+
+body > header > nav > ul.nav-panel {
     display: none;
 }
 
-body > header > nav input:checked ~ ul {
+body > header > nav input:checked ~ ul.nav-panel {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -54,7 +64,7 @@ body > header > nav input:checked ~ ul {
     box-shadow: 0 0 2rem #0008;
 }
 
-body > header > nav input:checked ~ ul li {
+body > header > nav input:checked ~ ul.nav-panel li {
     padding: 0;
     width: 100%;
 }

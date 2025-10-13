@@ -137,6 +137,17 @@ Whilw trying to created an event, I have noticed that the question box appeared 
 
  One thing that has to be fixed is that once the new event has been added, the user should be taken back to the event page, not the home page (this tells them immediately that the new event has been added). Mr. Copley complained about the inconsistency of the menu, so this has to be fixed real soon.
 
+ The main header, which is the name of the app, is used as back button instead. This always takes the user back to the homepage once clicked.
+
+ ![Alt text](back_home.gif)
+
+ The header and menu of the app are now consistent on every page.
+
+![Alt text](create_event3.gif)
+ This fixed how the user was not taken back to the event page. However, the new event added wa in the middle of the events list. This makes it harder to see whether the event has been added or not, so I need to make sure that the new event added appear at the top.
+
+ 
+
 ### Changes / Improvements
 
 Replace this text with notes any improvements you made as a result of the testing.

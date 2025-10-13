@@ -387,7 +387,7 @@ def create_event(id):
         result = client.execute(sql, params)
 
 
-        return redirect("/group")
+        return redirect(f"/group/{id}")
 
 
 
