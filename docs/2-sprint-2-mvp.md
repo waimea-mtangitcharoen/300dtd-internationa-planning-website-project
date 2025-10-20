@@ -107,14 +107,18 @@ The "New Group 9" is shown on the top of the group list.
 
 This page shows all the events added to that group. To test this, I add some events into different groups via database. I am expecting to see only events associated to that group (e.g. when I click group 1 button, I should only see events that are added to group 1).
 
-**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE TESTING HERE**
+![Alt text](image-13.png)
 
-### Changes / Improvements
+Events are displayed. However, I don't know whether the user wants to sort this by date or maybe by the most recent event added. So I have added some filtering buttons to the page.
 
-Replace this text with notes any improvements you made as a result of the testing.
+![Alt text](image-14.png)
 
-**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE IMPROVED SYSTEM HERE**
+"Soon" means is if the user wants to sort the event list by date
+"Recent" means is if the user wants to sort the event list by the latest event added (i.e. by id). Note that these names are for testing and will be changed later.
 
+![Alt text](event_filter1.gif)
+
+When the soon button is hit, the events are sorted by events that are happening first. When the recent button is hit, the most recent that has been added is placed on top of the list (i.e. events are ordered by descending id)
 
 ---
 
@@ -134,6 +138,7 @@ Whilw trying to created an event, I have noticed that the question box appeared 
  This shows that the new event, "Math help" appear in the "Math help" group. Images below shows that the new event has been added to the database:
  ![Alt text](image-11.png)
  ![Alt text](image-12.png)
+ 
 
  One thing that has to be fixed is that once the new event has been added, the user should be taken back to the event page, not the home page (this tells them immediately that the new event has been added). Mr. Copley complained about the inconsistency of the menu, so this has to be fixed real soon.
 

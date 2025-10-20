@@ -259,6 +259,11 @@ def show_all_events(id):
     
     # session.get("groups.id")
 
+    sort_query = request.args.get('sort') 
+
+    print(sort_query)
+
+
     with connect_db() as client:
 
         # Get all the groups from the DB
@@ -288,9 +293,16 @@ def show_all_events(id):
                 JOIN groups ON events.group_id = groups.id
 
                 WHERE groups.id=?
-
-                ORDER BY events.date ASC
             """
+
+            if sort_query:
+                sort_query = sort_query.lower()
+                if sort_query == 'recent':
+                    sql = sql + " ORDER BY events.id DESC"
+                elif sort_query == 'date':
+                    sql = sql + " ORDER BY events.date ASC"
+                else:
+                    sql = sql + " ORDER BY events.date DESC"
 
             # Get the groups we belong to
             params=[id]

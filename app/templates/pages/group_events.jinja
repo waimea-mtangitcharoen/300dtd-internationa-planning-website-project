@@ -41,7 +41,14 @@
 
   <article>
 
-    <h1>Group {{ group.name }}</h1>
+    <h1>
+
+      Group {{ group.name }}
+      <a href="/group/{{ group.id }}?sort=date" role="button">Soon</a>   
+      <a href="/group/{{ group.id }}?sort=recent" role="button">Recent</a>
+    
+    </h1>
+
 
     <table>
         <thead>
