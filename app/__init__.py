@@ -158,7 +158,7 @@ def add_a_thing():
 
 
 #-----------------------------------------------------------
-# Route for deleting a thing, Id given in the route
+# Route for deleting a group, Id given in the route
 # - Restricted to logged in users
 #-----------------------------------------------------------
 @app.get("/delete/<int:id>")
@@ -191,6 +191,42 @@ def delete_a_group(id):
 
         # Go back to the home page
         return redirect("/")
+    
+#-----------------------------------------------------------
+# Route for deleting an event, Id given in the route
+# - Restricted to logged in users
+#-----------------------------------------------------------
+@app.get("/delete/event/<int:id>")
+@login_required
+def delete_an_event(id):
+    # Get the user id from the session
+
+
+    with connect_db() as client:
+        group_id = id
+        # Delete the group from the DB only if we own it
+        sql = "DELETE FROM events WHERE id=?"
+        params = [id]
+        result = client.execute(sql, params)
+
+        # if result.rows_affected == 1:
+        #     # Group was deleted, so remove associated members and events
+
+        #     sql = "DELETE FROM membership WHERE group_id=?"
+        #     params = [id]
+        #     client.execute(sql, params)
+
+        #     sql = "DELETE FROM events WHERE group_id=?"
+        #     params = [id]
+        #     client.execute(sql, params)
+
+        #     flash("Group deleted", "success")
+
+        # else:
+        #     flash("Group could not be deleted", "error")
+
+        # Go back to the home page
+        return redirect(f"/group/{id}")
 
 
 
