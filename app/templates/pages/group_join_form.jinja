@@ -1,26 +1,25 @@
 {% extends 'pages/base.jinja' %}
 
 {% block content %}
+    <div class="join-group">
+        <article>
 
-    <article>
+                <header>
+                    <h2>Join a group</h2>
+                </header>
 
-        <header>
-            <h2>Join a group</h2>
-        </header>
+                <form action="/join-user" method="POST">
 
-        <form action="/group/join" method="POST">
+                    <input
+                        type="text"
+                        name="code"
+                        placeholder="Group code"
+                        required
+                    >
 
-            <input
-                type="text"
-                name="group code"
-                placeholder="Group code"
-                required
-            >
+                    <button>Join</button>
 
-            <button>Join</button>
-
-        </form>
-
-    </article>
-
+                </form>
+        </article>
+    </div>
 {% endblock %}

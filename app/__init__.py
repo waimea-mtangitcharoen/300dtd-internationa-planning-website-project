@@ -193,40 +193,44 @@ def delete_a_group(id):
         return redirect("/")
     
 #-----------------------------------------------------------
-# Route for deleting an event, Id given in the route
+# Route for deleting an event, id given in the route
 # - Restricted to logged in users
 #-----------------------------------------------------------
 @app.get("/delete/event/<int:id>")
 @login_required
 def delete_an_event(id):
     # Get the user id from the session
-
+    user_id = session["user_id"]
 
     with connect_db() as client:
-        group_id = id
-        # Delete the group from the DB only if we own it
-        sql = "DELETE FROM events WHERE id=?"
+        sql = """
+                SELECT groups.owner, events.group_id
+                FROM events
+                JOIN groups ON events.group_id = groups.id
+                WHERE events.id = ?
+
+        """
         params = [id]
         result = client.execute(sql, params)
 
-        # if result.rows_affected == 1:
-        #     # Group was deleted, so remove associated members and events
+        # In case the user tries to delete event from the URL that does not exist
+        if not result.rows:
+            flash("Event not found", "error")
+            return("/")
+        
+        row = result.rows[0]
+        owner = row["owner"]
+        group_id = row["group_id"]
 
-        #     sql = "DELETE FROM membership WHERE group_id=?"
-        #     params = [id]
-        #     client.execute(sql, params)
-
-        #     sql = "DELETE FROM events WHERE group_id=?"
-        #     params = [id]
-        #     client.execute(sql, params)
-
-        #     flash("Group deleted", "success")
-
-        # else:
-        #     flash("Group could not be deleted", "error")
-
+        if owner == user_id:
+            # Delete the group from the DB only if we own it
+            sql = "DELETE FROM events WHERE id=?"
+            params = [id]
+            result = client.execute(sql, params)
+        
         # Go back to the home page
-        return redirect(f"/group/{id}")
+        return redirect(f"/group/{ group_id }")
+        
 
 
 
@@ -262,6 +266,8 @@ def create_group():
         # Generate a random join code
         code = ''.join(random.choice(string.ascii_letters) for _ in range(5))
 
+        print(code)
+
         # Add the group to the groups table
         sql = "INSERT INTO groups (name, owner, code) VALUES (?, ?, ?)"
         params = [name, user_id, code]
@@ -284,6 +290,49 @@ def create_group():
 def join_group_form():
     return render_template("pages/group_join_form.jinja")
 
+#-----------------------------------------------------------
+# User joining a group route
+#-----------------------------------------------------------
+@app.post("/join-user")
+@login_required
+def join_user():
+    # Get the code from the form
+    code = request.form.get("code", "")
+
+    with connect_db() as client:
+        code = html.escape(code)
+
+        # Attempt to find a record for that code
+        sql = "SELECT id FROM groups WHERE code = ?"
+        params = [code]
+        result = client.execute(sql, params)
+
+        # Did we find a record?
+        if not result.rows:
+            flash("The group does not exist", "error")
+            return redirect("/group/join")
+        
+        group = result.rows[0]
+        group_id = group["id"]
+        user_id = session["user_id"]
+
+        # Check if user is already a member
+        sql = "SELECT * FROM membership WHERE user_id = ? AND group_id = ? "
+        params = [user_id, group_id]
+        result = client.execute(sql, params)
+
+        if not result.rows:
+            sql = "INSERT INTO membership (user_id, group_id) VALUES (?, ?)"
+            params = [user_id, group_id]
+            client.execute(sql, params)
+            flash("Join group successful", "success")
+            return redirect("/")
+        
+        flash("You are already a member of this group", "error")
+        return redirect("/group/join")
+
+        # Either username not found, or password was wrong
+        
 
 #-----------------------------------------------------------
 # Root for event page
@@ -292,12 +341,10 @@ def join_group_form():
 def show_all_events(id):
     if not session.get("logged_in"):
         return redirect("/login")
-    
-    # session.get("groups.id")
 
     sort_query = request.args.get('sort') 
 
-    print(sort_query)
+    print(sort_query) 
 
 
     with connect_db() as client:
@@ -306,7 +353,8 @@ def show_all_events(id):
         sql = """
             SELECT 
                 groups.id,
-                groups.name
+                groups.name,
+                groups.owner
             FROM groups
             WHERE id=?
         """
@@ -364,6 +412,7 @@ def show_an_event(id):
                     events.name,
                     events.date,
                     events.description,
+                    events.question,
                     events.option_1,
                     events.option_2,
                     events.option_3,
@@ -371,17 +420,20 @@ def show_an_event(id):
                     events.option_5
 
             FROM events
-            JOIN groups ON events.group_id = groups.id 
-
+            JOIN groups ON events.group_id = groups.id
             WHERE events.id=?
         """
+
         params = [id]
         result = client.execute(sql, params)
+        
 
+        print(result.rows)
         # Did we get a result?
         if result.rows:
             # yes, so show it on the page
             event = result.rows[0]
+            print("DEBUG EVENT:", event)
             return render_template("pages/event_details.jinja", event=event)
 
         else:
@@ -418,12 +470,12 @@ def create_event(id):
     # Sanitise any text data
     name = html.escape(name)
     description = html.escape(description)
-    question = html.escape("question")
-    option_1 = html.escape("option_1")
-    option_2 = html.escape("option_2")
-    option_3 = html.escape("option_3")
-    option_4 = html.escape("option_4")
-    option_5 = html.escape("option_5")
+    question = html.escape(question)
+    option_1 = html.escape(option_1)
+    option_2 = html.escape(option_2)
+    option_3 = html.escape(option_3)
+    option_4 = html.escape(option_4)
+    option_5 = html.escape(option_5)
 
     with connect_db() as client:
     

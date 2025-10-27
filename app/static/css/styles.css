@@ -25,24 +25,34 @@
 
 body > header {
     border-bottom: 1px solid #000;
-    background-color: #ccc;
+    background-color: rgb(255, 255, 255);
+    border-color: grey;
     position: sticky;
     top:0;
 }
 
 body > header [role="button"] {
     padding: 0.25rem 0.5rem;
+    background-color: rgb(43, 147, 165) ;
+    border: none;
 }
 
 
 /* MENU -------------------------------------------- */
 
+#planner {
+    color:rgba(37, 97, 110, 1);
+}
+
 body > header > nav h1 {
     font-size: 1.5rem;
     margin: 0;
+    padding-left: 2rem;
 }
+
 body > header > nav {
     align-items: center;
+    padding-right: 2rem;
 }
 
 body > header > nav > ul.nav-panel {
@@ -73,5 +83,82 @@ body > header > nav input {
     display: none;           /* Hide the checkbox */
 }
 
+h1 {
+    font-size: 32px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    color: rgba(37, 97, 110, 1);
+}
 
+/* HOMEPAGE DISPLAY -------------------------------------------- */
+.group li {
+    list-style: none;
+    display: flex;     
+    align-items: center;          /* center horizontally */
+    width: 75%;
+    height: 4rem;
+    padding: 0;
+    margin: 0.5rem;
+    border: 2px solid rgba(195, 229, 239, 1);
+    background-color: rgba(195, 229, 239, 1);
+    border-radius: 8px;
+    position: relative;           /* for positioning delete button */
+}
+
+.group li .group-button{
+    font-size: 22px;
+    background-color: rgba(195, 229, 239, 1);
+    color: rgba(37, 97, 110, 1);
+    border: none;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.group li a.delete {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    font-size: 0.8rem;
+}
+
+/* JOIN GROUP PAGE -------------------------------------------- */
+.join-group{
+    display: flex;
+    justify-content: center;
+    padding: 3rem;
+    border-radius: 5rem;   
+}
+
+.join-group article{
+    background-color: rgba(195, 229, 239, 1);
+}
+
+.join-group form{
+    background-color: rgba(195, 229, 239, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 700px; 
+    padding: 1.5rem 2rem;   /* less vertical, more horizontal padding */
+    border-radius: 10px;
+}
+
+.join-group h2 {
+    font-size: 24px;
+    text-align: center;
+    margin-top: 0.75rem;
+}
+
+.join-group input{
+    width: 100%;
+    border-radius: 10px;
+    padding: 1rem;
+
+}
+
+.join-group button{
+    width: 6rem;
+    background-color: rgba(37, 97, 110, 1);
+}
 

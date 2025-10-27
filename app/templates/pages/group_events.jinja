@@ -49,6 +49,7 @@
     
     </h1>
 
+    <p>current_user_id: {{ session["user_id"] }} | group.owner: {{ group.owner }}</p>
 
     <table>
         <thead>
@@ -60,13 +61,17 @@
         </thead>
 
         <tbody>
+        
+
         {% for event in events %}
 
             <tr>
                 <td><strong>{{ event.name }}</strong></td>
                 <td>{{ event.date }}</td>
                 <td><a href="/event/{{ event.id }}" role="button">View</a>
-                <td><a href="/delete/event/{{ event.id }}" role="">D</a></td>
+                {% if session["user_id"] == group.owner %}
+                  <td><a href="/delete/event/{{ event.id }}" role="">D</a></td>
+                {% endif %}
             </tr>
 
         {% else %}

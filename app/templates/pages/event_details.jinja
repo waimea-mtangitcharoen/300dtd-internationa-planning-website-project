@@ -10,31 +10,23 @@
 
 {% block content %}
 
+  <h1>{{ event.name }}</h1>
+
   <article>
+    <ul>
+      <li>Date: {{ event.date }}</li>
+      <li>Description: {{ event.description }}</li>   
+    </ul>
 
-    <h1>{{ event.name }}</h1>
-
-        <tbody>
-        {% for event in events %}
-
-        {# Do the details, summary thing #}
-
-        <p>{{ event.description }}</p>
-        <p>{{ event.date }}</p>
-        <p>{{ event.option_1 }}</p>
-        <p>{{ event.option_2 }}</p>
-        <p>{{ event.option_3 }}</p>
-        <p>{{ event.option_4 }}</p>
-        <p>{{ event.option_5 }}</p>
-
-        {% else %}
-
-            <p>None!</p>
-
-        {% endfor %}
-        </tbody>
-    </table>
-
+    <h2>{{ event.question }}</h2>
+    
+    <ul>
+      <li><a href="/vote/{{ event.id }}/1">○</a>{{ event.option_1 }}</li>
+      <li><a href="/vote/{{ event.id }}/2">○</a>{{ event.option_2 }}</li> 
+      <li><a href="/vote/{{ event.id }}/3">○</a>{{ event.option_3 }}</li>
+      <li><a href="/vote/{{ event.id }}/4">○</a>{{ event.option_4 }}</li>
+      <li><a href="/vote/{{ event.id }}/5">○</a>{{ event.option_5 }}</li>  
+    </ul>
   </article>
 
 

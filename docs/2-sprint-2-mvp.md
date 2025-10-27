@@ -122,6 +122,12 @@ When the soon button is hit, the events are sorted by events that are happening 
 
 ---
 
+## Event details page
+
+Options are listed, but there shouldn't be any button if there is nothing for that option.
+
+![alt text](image-15.png)
+
 ## Create event page
 
 This page shows all the events added to that group. To test this, I add some events into different groups via database. I am expecting to see only events associated to that group (e.g. when I click group 1 button, I should only see events that are added to group 1).
