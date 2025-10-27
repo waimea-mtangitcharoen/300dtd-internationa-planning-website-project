@@ -2,82 +2,82 @@
 
 
 {% block content %}
+    <div class="form">
+        <article>
 
-    <article>
+            <header>
+                <h2>Create event</h2>
+            </header>
 
-        <header>
-            <h2>Create event</h2>
-        </header>
+            <form action="/group/{{group_id}}/newevent" method="POST">
 
-        <form action="/group/{{group_id}}/newevent" method="POST">
+                <label>
+                    Name
+                    <input
+                        type="text"
+                        name="name"
+                        placeholder="Name"
+                        required
+                    >
+                </label>
 
-            <label>
-                Name
-                <input
-                    type="text"
-                    name="name"
-                    placeholder="Name"
-                    required
-                >
-            </label>
-
-            <input 
-                type="date" 
-                name="date" 
-                min="{{ today }}"
-                aria-label="Date"
-            >
-
-            <input
-                type="text"
-                name="description"
-                placeholder="Description"
-            >
-
-            <input
-                type="text"
-                name="question"
-                placeholder="Question"   
-            >
-
-            <fieldset>
-                <legend>Voting Options</legend>
-                
-                <input
-                    type="text"
-                    name="option_1"
-                    placeholder="Option 1"
+                <input 
+                    type="date" 
+                    name="date" 
+                    min="{{ today }}"
+                    aria-label="Date"
                 >
 
                 <input
                     type="text"
-                    name="option_2"
-                    placeholder="Option 2"
+                    name="description"
+                    placeholder="Description"
                 >
 
                 <input
                     type="text"
-                    name="option_3"
-                    placeholder="Option 3"
+                    name="question"
+                    placeholder="Question"   
                 >
 
-                <input
-                    type="text"
-                    name="option_4"
-                    placeholder="Option 4"
-                >
+                <fieldset>
+                    <legend>Voting Options</legend>
+                    
+                    <input
+                        type="text"
+                        name="option_1"
+                        placeholder="Option 1"
+                    >
 
-                <input
-                    type="text"
-                    name="option_5"
-                    placeholder="Option 5"
-                >
-            </fieldset>
+                    <input
+                        type="text"
+                        name="option_2"
+                        placeholder="Option 2"
+                    >
 
-            <button>Create</button>
+                    <input
+                        type="text"
+                        name="option_3"
+                        placeholder="Option 3"
+                    >
 
-        </form>
+                    <input
+                        type="text"
+                        name="option_4"
+                        placeholder="Option 4"
+                    >
 
-    </article>
+                    <input
+                        type="text"
+                        name="option_5"
+                        placeholder="Option 5"
+                    >
+                </fieldset>
 
+                <button>Create</button>
+
+            </form>
+
+        </article>
+    </div>
 {% endblock %}

@@ -29,6 +29,7 @@ body > header {
     border-color: grey;
     position: sticky;
     top:0;
+    z-index: 99999;
 }
 
 body > header [role="button"] {
@@ -72,6 +73,7 @@ body > header > nav input:checked ~ ul.nav-panel {
     background-color: #ddd;
     padding: 1rem;
     box-shadow: 0 0 2rem #0008;
+    z-index: 9999;
 }
 
 body > header > nav input:checked ~ ul.nav-panel li {
@@ -102,7 +104,8 @@ h1 {
     border: 2px solid rgba(195, 229, 239, 1);
     background-color: rgba(195, 229, 239, 1);
     border-radius: 8px;
-    position: relative;           /* for positioning delete button */
+    position: relative; 
+    line-height: 1;          /* for positioning delete button */
 }
 
 .group li .group-button{
@@ -112,6 +115,9 @@ h1 {
     border: none;
     text-decoration: none;
     display: inline-block;
+    width: 90%;
+    height: 100%;
+    text-align: left;
 }
 
 .group li a.delete {
@@ -121,19 +127,20 @@ h1 {
     font-size: 0.8rem;
 }
 
+
 /* JOIN GROUP PAGE -------------------------------------------- */
-.join-group{
+.form{
     display: flex;
     justify-content: center;
     padding: 3rem;
     border-radius: 5rem;   
 }
 
-.join-group article{
+.form article{
     background-color: rgba(195, 229, 239, 1);
 }
 
-.join-group form{
+.form form{
     background-color: rgba(195, 229, 239, 1);
     display: flex;
     flex-direction: column;
@@ -144,21 +151,20 @@ h1 {
     border-radius: 10px;
 }
 
-.join-group h2 {
+.form h2 {
     font-size: 24px;
     text-align: center;
     margin-top: 0.75rem;
 }
 
-.join-group input{
+.form input{
     width: 100%;
     border-radius: 10px;
     padding: 1rem;
 
 }
 
-.join-group button{
+.form button{
     width: 6rem;
     background-color: rgba(37, 97, 110, 1);
 }
-
