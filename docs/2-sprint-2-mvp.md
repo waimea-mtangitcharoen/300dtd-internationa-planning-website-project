@@ -172,13 +172,7 @@ Replace this text with notes any improvements you made as a result of the testin
 
 The user can join groups by inputting a unique code. To test this, I will input the unique code generated when the group is created. If the code I input matches what is sored in the database, then I should see that group popped up on my home page. I fit does not match, there should be a flash message informing me thaat what I have input is wrong.
 
-**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE TESTING HERE**
-
-### Changes / Improvements
-
-Replace this text with notes any improvements you made as a result of the testing.
-
-**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE IMPROVED SYSTEM HERE**
+![Alt text](join_group1.gif)
 
 
 ---
