@@ -29,9 +29,9 @@ The web app is fully implemented with a refined UI:
 ## Login and signup buttons layout
 
 I have given my end-user 3 options to choose from for how login and signup buttons on the login page should look.
-![alt text](image-22.png)
-![alt text](image-23.png)
-![alt text](image-24.png) - this one is how the buttons were styled at first
+![alt text](login_form_1.png)
+![alt text](login_form_2.png)
+![alt text](login_form_3.png) - this one is how the buttons were styled at first
 
 
 
@@ -45,15 +45,15 @@ There is not enough time to make the voting functionality of this app work in ti
 
 
 Because there is no voting, option and question fields can be removed from the form.
-![original create event form](image-25.png)
-![changed create event form](image-26.png)
+![original create event form](event_create_old.png)
+![changed create event form](event_create_new.png)
 
 Event details page will only show description, and if there is no description, then there should not be view button.
-![original description page](image-27.png)
+![original description page](event_description_old.png)
 
 Math help does not have any details, whereas tutorial does, so there is a view button in the tutorial row.
-![changed description page 1](image-28.png)
-![changed description page 2](image-29.png)
+![changed description page 1](event_view.png)
+![changed description page 2](event_description.png)
 
 
 

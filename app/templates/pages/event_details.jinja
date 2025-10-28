@@ -10,13 +10,14 @@
 
 {% block content %}
 
-  <h1>{{ event.name }}</h1>
-
-  <article>
-    <ul>
-      <li>Description: {{ event.description }}</li>   
-    </ul>
-  </article>
+  <h1>{{ event.name }} details</h1>
+  <div class="description">
+    <article>
+      <ul>
+        <li>{{ event.description }}</li>   
+      </ul>
+    </article>
+  </div>
 
 
 {% endblock %}

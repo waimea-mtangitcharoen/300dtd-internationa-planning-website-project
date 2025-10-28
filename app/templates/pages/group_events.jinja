@@ -23,8 +23,13 @@
       <li><label for="menu_toggle">&#10005;</label></li>
       <li><a href="/group/new" class="menu">Create</a></li>
       <li><a href="/group/join" class="menu">Join</a></li>
-      <li><a href="/group/{{ group.id }}/newevent" class="menu">Create Event</a></li>
+      {% if session.user_id == group.owner %}
+        <li><a href="/group/{{ group.id }}/newevent" class="menu">Create Event</a></li>
 
+      {% else %}
+
+      {% endif %}
+      
       {% if session.user_id %}
         <li><a href="/logout">Logout</a></li>
 
@@ -41,22 +46,23 @@
 
   <article>
 
-    <h1>
+    <header>
+      <h1>Group {{ group.name }}</h1>
 
-      Group {{ group.name }}
       <div class="filter">
         <a href="/group/{{ group.id }}?sort=date" role="button">Soon</a>   
         <a href="/group/{{ group.id }}?sort=recent" role="button">Recent</a>
         <a href="/group/{{ group.id }}" role="button">Clear</a>
       </div>
-    
-    </h1>
+
+    </header>
 
     <table>
         <thead>
             <tr>
                 <th>Event</th>
                 <th>Date</th>
+                <th></th>
                 <th></th>
             </tr>
         </thead>

@@ -37,10 +37,10 @@ User should be able to login to their account. I need to test:
 This can be tested by implementing a random username and password manually through the database, and try logging in with these information using the login form.
 
 This is when the login is successful:
-![alt text](login1.gif)
+![Login successful](login1.gif)
 
 This is when the login is unsucessful(invalid credentials):
-![alt text](login2.gif)
+![Login unsuccessful](login2.gif)
 
 
 ---
@@ -49,7 +49,7 @@ This is when the login is unsucessful(invalid credentials):
 
 User can log out of their account (so others can login or to keep the privacy). The test can be done by clicking the log out button, and this should take the user back to the log in page.
 
-[alt text!](logout.gif)
+[Logout](logout.gif)
 
 
 ---
@@ -58,7 +58,7 @@ User can log out of their account (so others can login or to keep the privacy). 
 
 The user is able to sign up if they have not yet done that. The sign up button should take the user to the sign up form page. To test this, I can try sign up and login with those credentials. I should be able to login after signing up as my data has been stored in the database.
 
-![alt text](signup.gif)
+![Sign up](signup.gif)
 
 Note that this sign-up button needs styling that goes along with the login form.
 
@@ -86,13 +86,13 @@ I can no longer see cookie taster's group code, so this problem has been fixed. 
 
 Any user can create a group. Each group has got a unique code that can shared to other people to join the group. I will test this by creating the group myself. The expected outcome is that the gorup added is shown on the group page, and a unique code has been generated. 
 
-![Alt text](create_group_1.gif)
+![Create group](create_group_1.gif)
 
 Once the 'add" button is hit, user is taken back to the home page and the "New Group 8" can be display on the screen. However, I think i have chosen it to appear as ascending order, but it this is not convenient because if there are many groups, the user has to scroll to find the new group that has been added. It should be the first group on the very top after it has been added.
 
 This is when ordering the groups added have been fixed.
 The "New Group 9" is shown on the top of the group list.
-![Alt text](create_group_2.gif)
+![Create group ordered](create_group_2.gif)
 
 
 ---
@@ -110,12 +110,12 @@ Events are displayed. However, I don't know whether the user wants to sort this 
 "Soon" means is if the user wants to sort the event list by date
 "Recent" means is if the user wants to sort the event list by the latest event added (i.e. by id). Note that these names are for testing and will be changed later.
 
-![Alt text](event_filter1.gif)
+![Page filter](event_filter1.gif)
 
 When the soon button is hit, the events are sorted by events that are happening first. When the recent button is hit, the most recent that has been added is placed on top of the list (i.e. events are ordered by descending id).
 
 There should be a "clear" button to clear the filters as well.
-![alt text](event_filter.gif).
+![Clear filter](event_filter.gif).
 Once this button is clicked, any filter that was applied are cleared.
 Note that the line printed is for when I tested the functionality of create event.
 
@@ -150,11 +150,11 @@ While trying to created an event, I have noticed that the question box appeared 
 
  The main header, which is the name of the app, is used as back button instead. This always takes the user back to the homepage once clicked.
 
- ![Alt text](back_home.gif)
+ ![Previous page](back_home.gif)
 
  The header and menu of the app are now consistent on every page.
 
-![Alt text](create_event3.gif)
+![Event page redirect](create_event3.gif)
  This fixed how the user was not taken back to the event page. However, the new event added wa in the middle of the events list. This makes it harder to see whether the event has been added or not, so I need to make sure that the new event added appear at the top.
 
  ![Alt text](image-19.png) 
@@ -168,7 +168,7 @@ While trying to created an event, I have noticed that the question box appeared 
 
 ## Join group
 
-The user can join groups by inputting a unique code. To test this, I will input the unique code generated when the group is created. If the code I input matches what is sored in the database, then I should see that group popped up on my home page. I fit does not match, there should be a flash message informing me thaat what I have input is wrong.
+The user can join groups by inputting a unique code. To test this, I will input the unique code generated when the group is created. If the code I input matches what is sored in the database, then I should see that group popped up on my home page. I fit does not match, there should be a flash message informing me that what I have input is wrong.
 
 ![Alt text](join_group1.gif)
 ![Alt text](join_group2.gif)

@@ -133,6 +133,10 @@ h1 {
     font-size: 0.8rem;
 }
 
+.group ul{
+    padding: 0;
+}
+
 
 /* FORM -------------------------------------------- */
 .form{
@@ -182,11 +186,25 @@ h1 {
 }
 
 /* EVENT PAGE -------------------------------------------- */
+
+article header {
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem 3rem;
+}
+
+article header > * {
+    margin: 0;
+}
+
+
 .filter {
     display: flex;
     justify-content: flex-end;
     gap: 5px;
-    margin-right: 10rem;
 }
 
 .filter a {
@@ -211,5 +229,17 @@ h1 {
     height: 2rem;
     padding: 4px 15px;
 
+}
+
+/* EVENT DETAILS PAGE -------------------------------------------- */
+.description li{
+    list-style: none;
+    display: flex;
+    align-items: left;
+}
+
+.description ul{
+    padding: 0;
+    margin: 0;
 }
 
