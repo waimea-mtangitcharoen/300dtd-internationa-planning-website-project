@@ -157,6 +157,9 @@ Whilw trying to created an event, I have noticed that the question box appeared 
 ![Alt text](create_event3.gif)
  This fixed how the user was not taken back to the event page. However, the new event added wa in the middle of the events list. This makes it harder to see whether the event has been added or not, so I need to make sure that the new event added appear at the top.
 
+ ![Alt text](image-19.png) 
+ This needs to be fixed, because we only want the owener to be able to add new event to the group
+
  
 
 ### Changes / Improvements
@@ -173,6 +176,16 @@ Replace this text with notes any improvements you made as a result of the testin
 The user can join groups by inputting a unique code. To test this, I will input the unique code generated when the group is created. If the code I input matches what is sored in the database, then I should see that group popped up on my home page. I fit does not match, there should be a flash message informing me thaat what I have input is wrong.
 
 ![Alt text](join_group1.gif)
+![Alt text](join_group2.gif)
+
+This is the database before joining the group
+![Alt text](image-16.png)
+
+Now, I have join another group called "teams", which has a group id 3
+![Alt text](image-17.png)
+This user has been added to the membership table. On the website, we can also see that this user cannot see the delete button, since the user is not the owner of the group
+![Alt text](image-18.png)
+
 
 
 ---
