@@ -26,47 +26,46 @@ The web app is fully implemented with a refined UI:
 
 ---
 
-## Testing FEATURE NAME HERE
+## Login and signup buttons layout
 
-Replace this text with notes about what you are testing, how you tested it, and the outcome of the testing
+I have given my end-user 3 options to choose from for how login and signup buttons on the login page should look.
+![alt text](image-22.png)
+![alt text](image-23.png)
+![alt text](image-24.png) - this one is how the buttons were styled at first
 
-**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE TESTING HERE**
 
-### Changes / Improvements
 
-Replace this text with notes any improvements you made as a result of the testing.
-
-**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE IMPROVED SYSTEM HERE**
 
 
 ---
 
-## Testing FEATURE NAME HERE
+## Voting
 
-Replace this text with notes about what you are testing, how you tested it, and the outcome of the testing
+There is not enough time to make the voting functionality of this app work in time, so I have decided to discard this functionality. This means some of the forms on my website will look different, and the functionality of the website is lessened.
 
-**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE TESTING HERE**
 
-### Changes / Improvements
+Because there is no voting, option and question fields can be removed from the form.
+![original create event form](image-25.png)
+![changed create event form](image-26.png)
 
-Replace this text with notes any improvements you made as a result of the testing.
+Event details page will only show description, and if there is no description, then there should not be view button.
+![original description page](image-27.png)
 
-**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE IMPROVED SYSTEM HERE**
+Math help does not have any details, whereas tutorial does, so there is a view button in the tutorial row.
+![changed description page 1](image-28.png)
+![changed description page 2](image-29.png)
+
 
 
 ---
 
-## Testing FEATURE NAME HERE
+## Create event
 
-Replace this text with notes about what you are testing, how you tested it, and the outcome of the testing
+I was wondering whether it is better for all the member to be able to create events, or only the owner should be able to do it. At the moment, any member can create new event.
 
-**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE TESTING HERE**
+I have asked my end user about this, and one of them suggested that only the owner should be able to do it, since the purpose of the website is for an informing purpose. This will keep things neat and simple.
 
-### Changes / Improvements
 
-Replace this text with notes any improvements you made as a result of the testing.
-
-**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE IMPROVED SYSTEM HERE**
 
 
 ---
@@ -102,6 +101,8 @@ Replace this text with notes any improvements you made as a result of the testin
 ---
 
 ## Sprint Review
+The sprint has made me realized that I would not be able to allow user to vote on my website. One of the main reason is the limited time and with thoughts, there will be more things to consider if this functionality is added. Also, other key features still work as a planner website, I would propose this as a further improvement in the future.
 
-Replace this text with a statement about how the sprint has moved the project forward - key success point, any things that didn't go so well, etc.
+This process has allowed me to get back to my end-user, asking for feedback to improve, especially, the UI of the website. The biggest problem seem to be with the color of the website, where half of the people like one option and another half likes the other option. Because this app is targetting a small group of people, it is possible for me to combine the colour of both options and provided a better solution. However, if more people are using the website, it would be impossible for everyone to like the same color, so I have to constantly remind myself that it is the best for the color to be neutral, or to ensure that at least user will not be uncomfortable using the website eventhough it is not their favourable colour.
+
 

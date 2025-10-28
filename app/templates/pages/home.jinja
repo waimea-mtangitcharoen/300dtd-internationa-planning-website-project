@@ -49,9 +49,16 @@
                 <li>
                     <a href="/group/{{ group.id }}" class="group-button"role="button">
                         <strong>{{ group.name }}</strong>
-
                         {% if session.user_id == group.owner %}
 
+                          <p>{{ group.code }}</p>
+
+                        {% else %}
+
+                        {% endif %}
+
+                        {% if session.user_id == group.owner %}
+                        
                           <a href="/delete/{{ group.id }}" class="delete" onclick="return confirm('Really delete?');">🗑</a>
 
                         {% else %}

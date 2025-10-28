@@ -40,7 +40,7 @@ init_datetime(app)  # Handle UTC dates in timestamps
 
 
 #-----------------------------------------------------------
-#Login page route
+#Homepage route
 #-----------------------------------------------------------
 @app.get("/")
 def home():
@@ -53,6 +53,7 @@ def home():
             SELECT 
                 groups.id,
                 groups.name,
+                groups.code,
                 groups.owner
 
             FROM groups
@@ -70,92 +71,6 @@ def home():
         groups = result.rows
 
     return render_template("pages/home.jinja", groups=groups)
-
-#-----------------------------------------------------------
-# Things page route - Show all the things, and new thing form
-#-----------------------------------------------------------
-@app.get("/things/")
-def show_all_things():
-    with connect_db() as client:
-        # Get all the things from the DB
-        sql = """
-            SELECT things.id,
-                   things.name,
-                   users.name AS owner
-
-            FROM things
-            JOIN users ON things.user_id = users.id
-
-            ORDER BY things.name ASC
-        """
-        params=[]
-        result = client.execute(sql, params)
-        things = result.rows
-
-        # And show them on the page
-        return render_template("pages/things.jinja", things=things)
-
-
-#-----------------------------------------------------------
-# Thing page route - Show details of a single thing
-#-----------------------------------------------------------
-@app.get("/thing/<int:id>")
-def show_one_thing(id):
-    with connect_db() as client:
-        # Get the thing details from the DB, including the owner info
-        sql = """
-            SELECT things.id,
-                   things.name,
-                   things.price,
-                   things.user_id,
-                   users.name AS owner
-
-            FROM things
-            JOIN users ON things.user_id = users.id
-
-            WHERE things.id=?
-        """
-        params = [id]
-        result = client.execute(sql, params)
-
-        # Did we get a result?
-        if result.rows:
-            # yes, so show it on the page
-            thing = result.rows[0]
-            return render_template("pages/thing.jinja", thing=thing)
-
-        else:
-            # No, so show error
-            return not_found_error()
-
-
-#-----------------------------------------------------------
-# Route for adding a thing, using data posted from a form
-# - Restricted to logged in users
-#-----------------------------------------------------------
-@app.post("/add")
-@login_required
-def add_a_thing():
-    # Get the data from the form
-    name  = request.form.get("name")
-    price = request.form.get("price")
-
-    # Sanitise the text inputs
-    name = html.escape(name)
-
-    # Get the user id from the session
-    user_id = session["user_id"]
-
-    with connect_db() as client:
-        # Add the thing to the DB
-        sql = "INSERT INTO things (name, price, user_id) VALUES (?, ?, ?)"
-        params = [name, price, user_id]
-        client.execute(sql, params)
-
-        # Go back to the home page
-        flash(f"Thing '{name}' added", "success")
-        return redirect("/things")
-
 
 #-----------------------------------------------------------
 # Route for deleting a group, Id given in the route
@@ -344,9 +259,6 @@ def show_all_events(id):
 
     sort_query = request.args.get('sort') 
 
-    print(sort_query) 
-
-
     with connect_db() as client:
 
         # Get all the groups from the DB
@@ -426,14 +338,11 @@ def show_an_event(id):
 
         params = [id]
         result = client.execute(sql, params)
-        
 
-        print(result.rows)
         # Did we get a result?
         if result.rows:
             # yes, so show it on the page
             event = result.rows[0]
-            print("DEBUG EVENT:", event)
             return render_template("pages/event_details.jinja", event=event)
 
         else:

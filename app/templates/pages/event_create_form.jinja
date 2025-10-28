@@ -21,57 +21,25 @@
                     >
                 </label>
 
-                <input 
-                    type="date" 
-                    name="date" 
-                    min="{{ today }}"
-                    aria-label="Date"
-                >
+                <label>
+                    Date
+                    <input 
+                        type="date" 
+                        name="date" 
+                        min="{{ today }}"
+                        aria-label="Date"
+                    >
+                </label>
 
-                <input
-                    type="text"
-                    name="description"
-                    placeholder="Description"
-                >
-
-                <input
-                    type="text"
-                    name="question"
-                    placeholder="Question"   
-                >
-
-                <fieldset>
-                    <legend>Voting Options</legend>
-                    
+                <label>
+                    Description
                     <input
                         type="text"
-                        name="option_1"
-                        placeholder="Option 1"
+                        name="description"
+                        placeholder="Description"
                     >
+                </label>          
 
-                    <input
-                        type="text"
-                        name="option_2"
-                        placeholder="Option 2"
-                    >
-
-                    <input
-                        type="text"
-                        name="option_3"
-                        placeholder="Option 3"
-                    >
-
-                    <input
-                        type="text"
-                        name="option_4"
-                        placeholder="Option 4"
-                    >
-
-                    <input
-                        type="text"
-                        name="option_5"
-                        placeholder="Option 5"
-                    >
                 </fieldset>
 
                 <button>Create</button>

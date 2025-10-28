@@ -35,15 +35,12 @@ User should be able to login to their account. I need to test:
 - The user can login (compare their username and password hash to that of the database), which then takes them to the home page of the website/app.
 - If the username or password is invalid, the user will not be able to log in.
 This can be tested by implementing a random username and password manually through the database, and try logging in with these information using the login form.
-Replace this text with notes about what you are testing, how you tested it, and the outcome of the testing
 
-**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE TESTING HERE**
+This is when the login is successful:
+![alt text](login1.gif)
 
-### Changes / Improvements
-
-Replace this text with notes any improvements you made as a result of the testing.
-
-**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE IMPROVED SYSTEM HERE**
+This is when the login is unsucessful(invalid credentials):
+![alt text](login2.gif)
 
 
 ---
@@ -52,15 +49,7 @@ Replace this text with notes any improvements you made as a result of the testin
 
 User can log out of their account (so others can login or to keep the privacy). The test can be done by clicking the log out button, and this should take the user back to the log in page.
 
-**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE TESTING HERE**
-
-It seem that the log out button works. However, the user can use the browser's back button to return to the login page too and the website appears to be loading for logging in forever. This doesn't follow the functionality heuristic.
-
-### Changes / Improvements
-
-Replace this text with notes any improvements you made as a result of the testing.
-
-**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE IMPROVED SYSTEM HERE**
+[alt text!](logout.gif)
 
 
 ---
@@ -69,15 +58,26 @@ Replace this text with notes any improvements you made as a result of the testin
 
 The user is able to sign up if they have not yet done that. The sign up button should take the user to the sign up form page. To test this, I can try sign up and login with those credentials. I should be able to login after signing up as my data has been stored in the database.
 
-Replace this text with notes about what you are testing, how you tested it, and the outcome of the testing
+![alt text](signup.gif)
 
-**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE TESTING HERE**
+Note that this sign-up button needs styling that goes along with the login form.
 
-### Changes / Improvements
+---
 
-Replace this text with notes any improvements you made as a result of the testing.
+## Homepage (group page)
 
-**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE IMPROVED SYSTEM HERE**
+The user is able to see groups that they are part of here. Also, only the user that is the owner of the group can delete the group.
+
+![alt text](image-20.png)
+
+Here I can see the code for each group. However, i am not the owner of the "Cookie taster" group, so I should not be able to see the group code. This means I have to add some conditions to my template.
+
+![alt text](image-21.png)
+I can no longer see cookie taster's group code, so this problem has been fixed. At the moment, the codes are very hard to see, so I should style them to make them neat and visible for the user.
+
+
+
+
 
 
 ---
@@ -90,15 +90,9 @@ Any user can create a group. Each group has got a unique code that can shared to
 
 Once the 'add" button is hit, user is taken back to the home page and the "New Group 8" can be display on the screen. However, I think i have chosen it to appear as ascending order, but it this is not convenient because if there are many groups, the user has to scroll to find the new group that has been added. It should be the first group on the very top after it has been added.
 
-
-The unique code should also be placed somewhere for the owner to see only.
-
-### Changes / Improvements
 This is when ordering the groups added have been fixed.
 The "New Group 9" is shown on the top of the group list.
 ![Alt text](create_group_2.gif)
-
-**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE IMPROVED SYSTEM HERE**
 
 
 ---
@@ -118,7 +112,12 @@ Events are displayed. However, I don't know whether the user wants to sort this 
 
 ![Alt text](event_filter1.gif)
 
-When the soon button is hit, the events are sorted by events that are happening first. When the recent button is hit, the most recent that has been added is placed on top of the list (i.e. events are ordered by descending id)
+When the soon button is hit, the events are sorted by events that are happening first. When the recent button is hit, the most recent that has been added is placed on top of the list (i.e. events are ordered by descending id).
+
+There should be a "clear" button to clear the filters as well.
+![alt text](event_filter.gif).
+Once this button is clicked, any filter that was applied are cleared.
+Note that the line printed is for when I tested the functionality of create event.
 
 ---
 
@@ -128,14 +127,15 @@ Options are listed, but there shouldn't be any button if there is nothing for th
 
 ![alt text](image-15.png)
 
+---
+
 ## Create event page
 
 This page shows all the events added to that group. To test this, I add some events into different groups via database. I am expecting to see only events associated to that group (e.g. when I click group 1 button, I should only see events that are added to group 1).
 
 ![Alt text](image.png)
 
-Whilw trying to created an event, I have noticed that the question box appeared as null. This should not be the case since the owner might want to provide the information only.
-
+While trying to created an event, I have noticed that the question box appeared as null. This should not be the case since the owner might want to provide the information only.
 
 
 ![Alt text](image-10.png)
@@ -162,11 +162,6 @@ Whilw trying to created an event, I have noticed that the question box appeared 
 
  
 
-### Changes / Improvements
-
-Replace this text with notes any improvements you made as a result of the testing.
-
-**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE IMPROVED SYSTEM HERE**
 
 
 ---
@@ -224,13 +219,6 @@ Events table after:
 
 At the moment, anyone can delete the group but it would be more efficient if only the owner of the group can delete the group.
 
-
-
-### Changes / Improvements
-
-Replace this text with notes any improvements you made as a result of the testing.
-
-**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE IMPROVED SYSTEM HERE**
 
 
 ---

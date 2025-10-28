@@ -44,12 +44,13 @@
     <h1>
 
       Group {{ group.name }}
-      <a href="/group/{{ group.id }}?sort=date" role="button">Soon</a>   
-      <a href="/group/{{ group.id }}?sort=recent" role="button">Recent</a>
+      <div class="filter">
+        <a href="/group/{{ group.id }}?sort=date" role="button">Soon</a>   
+        <a href="/group/{{ group.id }}?sort=recent" role="button">Recent</a>
+        <a href="/group/{{ group.id }}" role="button">Clear</a>
+      </div>
     
     </h1>
-
-    <p>current_user_id: {{ session["user_id"] }} | group.owner: {{ group.owner }}</p>
 
     <table>
         <thead>
@@ -68,9 +69,14 @@
             <tr>
                 <td><strong>{{ event.name }}</strong></td>
                 <td>{{ event.date }}</td>
-                <td><a href="/event/{{ event.id }}" role="button">View</a>
+                {% if event.description %}
+                  <td><a href="/event/{{ event.id }}" class="view-button" role="button">View</a>
+                {% else %}
+                  <td></td>  {# keeps table structure clean #}
+                {% endif %}
+
                 {% if session["user_id"] == group.owner %}
-                  <td><a href="/delete/event/{{ event.id }}" role="">D</a></td>
+                  <td><a href="/delete/event/{{ event.id }}" class="delete">🗑</a></td>
                 {% endif %}
             </tr>
 
@@ -83,8 +89,5 @@
     </table>
 
   </article>
-
-
-    <a role="button" href="/">Back to groups</a>
 
 {% endblock %}

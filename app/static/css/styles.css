@@ -93,19 +93,20 @@ h1 {
 }
 
 /* HOMEPAGE DISPLAY -------------------------------------------- */
+
+
 .group li {
     list-style: none;
     display: flex;     
-    align-items: center;          /* center horizontally */
-    width: 75%;
+    align-items: center; 
+    width: 85%;
     height: 4rem;
-    padding: 0;
-    margin: 0.5rem;
+    padding: 0.4rem;
+    margin: 1rem;
     border: 2px solid rgba(195, 229, 239, 1);
     background-color: rgba(195, 229, 239, 1);
     border-radius: 8px;
     position: relative; 
-    line-height: 1;          /* for positioning delete button */
 }
 
 .group li .group-button{
@@ -114,10 +115,15 @@ h1 {
     color: rgba(37, 97, 110, 1);
     border: none;
     text-decoration: none;
-    display: inline-block;
+    display: flex;
+    justify-content: space-between;
     width: 90%;
     height: 100%;
     text-align: left;
+}
+
+.group li .group-button p{
+    color: rgba(37, 97, 110, 1);
 }
 
 .group li a.delete {
@@ -128,7 +134,7 @@ h1 {
 }
 
 
-/* JOIN GROUP PAGE -------------------------------------------- */
+/* FORM -------------------------------------------- */
 .form{
     display: flex;
     justify-content: center;
@@ -147,7 +153,7 @@ h1 {
     align-items: center;
     width: 100%;
     max-width: 700px; 
-    padding: 1.5rem 2rem;   /* less vertical, more horizontal padding */
+    padding: 1.5rem 2rem;
     border-radius: 10px;
 }
 
@@ -167,4 +173,43 @@ h1 {
 .form button{
     width: 6rem;
     background-color: rgba(37, 97, 110, 1);
+    margin-bottom: 0.5rem;
 }
+
+.form a{
+    width: 6rem;
+    margin-top: 0.5rem;
+}
+
+/* EVENT PAGE -------------------------------------------- */
+.filter {
+    display: flex;
+    justify-content: flex-end;
+    gap: 5px;
+    margin-right: 10rem;
+}
+
+.filter a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5rem;
+    height: 2rem;
+    font-size: 0.9rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #333;
+    background-color: #f8f8f8;
+
+}
+
+.view-button{
+    background-color: #25616E;
+    color: white;
+    border: none;
+    height: 2rem;
+    padding: 4px 15px;
+
+}
+
