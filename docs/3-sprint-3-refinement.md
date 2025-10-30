@@ -5,16 +5,6 @@
 
 Develop the system until it is fully featured, with a refined UI and it satisfies the requirements. The system will be fully tested at this point.
 
-
----
-
-## Updated Database Schema (if it changed)
-
-Replace this text with notes regarding the DB schema.
-
-![SCREENSHOT OF DB SCHEMA](screenshots/example.png)
-
-
 ---
 
 ## Final Implementation
@@ -29,11 +19,9 @@ The web app is fully implemented with a refined UI:
 ## Login and signup buttons layout
 
 I have given my end-user 3 options to choose from for how login and signup buttons on the login page should look.
-![alt text](login_form_1.png)
-![alt text](login_form_2.png)
-![alt text](login_form_3.png) - this one is how the buttons were styled at first
-
-
+![alt text](screenshots/login_form_1.png)
+![alt text](screenshots/login_form_2.png)
+![alt text](screenshots/login_form_3.png) - this one is how the buttons were styled at first
 
 
 
@@ -45,15 +33,15 @@ There is not enough time to make the voting functionality of this app work in ti
 
 
 Because there is no voting, option and question fields can be removed from the form.
-![original create event form](event_create_old.png)
-![changed create event form](event_create_new.png)
+![original create event form](screenshots/event_create_old.png)
+![changed create event form](screenshots/event_create_new.png)
 
 Event details page will only show description, and if there is no description, then there should not be view button.
-![original description page](event_description_old.png)
+![original description page](screenshots/event_description_old.png)
 
 Math help does not have any details, whereas tutorial does, so there is a view button in the tutorial row.
-![changed description page 1](event_view.png)
-![changed description page 2](event_description.png)
+![changed description page 1](screenshots/event_view.png)
+![changed description page 2](screenshots/event_description.png)
 
 
 
@@ -65,37 +53,10 @@ I was wondering whether it is better for all the member to be able to create eve
 
 I have asked my end user about this, and one of them suggested that only the owner should be able to do it, since the purpose of the website is for an informing purpose. This will keep things neat and simple.
 
-
-
-
 ---
 
-## Testing FEATURE NAME HERE
+## Group code
 
-Replace this text with notes about what you are testing, how you tested it, and the outcome of the testing
-
-**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE TESTING HERE**
-
-### Changes / Improvements
-
-Replace this text with notes any improvements you made as a result of the testing.
-
-**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE IMPROVED SYSTEM HERE**
-
-
----
-
-## Testing FEATURE NAME HERE
-
-Replace this text with notes about what you are testing, how you tested it, and the outcome of the testing
-
-**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE TESTING HERE**
-
-### Changes / Improvements
-
-Replace this text with notes any improvements you made as a result of the testing.
-
-**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE IMPROVED SYSTEM HERE**
 
 
 ---

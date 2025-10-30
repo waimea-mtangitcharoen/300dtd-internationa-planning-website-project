@@ -37,10 +37,10 @@ User should be able to login to their account. I need to test:
 This can be tested by implementing a random username and password manually through the database, and try logging in with these information using the login form.
 
 This is when the login is successful:
-![Login successful](login1.gif)
+![Login successful](screenshots/login1.gif)
 
 This is when the login is unsucessful(invalid credentials):
-![Login unsuccessful](login2.gif)
+![Login unsuccessful](screenshots/login2.gif)
 
 
 ---
@@ -49,7 +49,7 @@ This is when the login is unsucessful(invalid credentials):
 
 User can log out of their account (so others can login or to keep the privacy). The test can be done by clicking the log out button, and this should take the user back to the log in page.
 
-[Logout](logout.gif)
+[Logout](screenshots/logout.gif)
 
 
 ---
@@ -58,7 +58,7 @@ User can log out of their account (so others can login or to keep the privacy). 
 
 The user is able to sign up if they have not yet done that. The sign up button should take the user to the sign up form page. To test this, I can try sign up and login with those credentials. I should be able to login after signing up as my data has been stored in the database.
 
-![Sign up](signup.gif)
+![Sign up](screenshots/signup.gif)
 
 Note that this sign-up button needs styling that goes along with the login form.
 
@@ -101,21 +101,22 @@ The "New Group 9" is shown on the top of the group list.
 
 This page shows all the events added to that group. To test this, I add some events into different groups via database. I am expecting to see only events associated to that group (e.g. when I click group 1 button, I should only see events that are added to group 1).
 
-![Alt text](image-13.png)
+![Showing events](screenshots/event_show.png)
 
 Events are displayed. However, I don't know whether the user wants to sort this by date or maybe by the most recent event added. So I have added some filtering buttons to the page.
 
-![Alt text](image-14.png)
+![Filtering added](screenshots/event_filter.png)
 
 "Soon" means is if the user wants to sort the event list by date
 "Recent" means is if the user wants to sort the event list by the latest event added (i.e. by id). Note that these names are for testing and will be changed later.
 
-![Page filter](event_filter1.gif)
+![Page filter](screenshots/event_filter1.gif)
 
 When the soon button is hit, the events are sorted by events that are happening first. When the recent button is hit, the most recent that has been added is placed on top of the list (i.e. events are ordered by descending id).
 
 There should be a "clear" button to clear the filters as well.
-![Clear filter](event_filter.gif).
+
+![Clear filter](screenshots/event_filter.gif).
 Once this button is clicked, any filter that was applied are cleared.
 Note that the line printed is for when I tested the functionality of create event.
 
@@ -125,7 +126,7 @@ Note that the line printed is for when I tested the functionality of create even
 
 Options are listed, but there shouldn't be any button if there is nothing for that option.
 
-![alt text](image-15.png)
+![Voting options](screenshots/event_options.png)
 
 ---
 
@@ -133,32 +134,30 @@ Options are listed, but there shouldn't be any button if there is nothing for th
 
 This page shows all the events added to that group. To test this, I add some events into different groups via database. I am expecting to see only events associated to that group (e.g. when I click group 1 button, I should only see events that are added to group 1).
 
-![Alt text](image.png)
 
 While trying to created an event, I have noticed that the question box appeared as null. This should not be the case since the owner might want to provide the information only.
 
-
-![Alt text](image-10.png)
+![Null question box](screenshots/create_event_question.png)
 
 ![Alt text](create_event_1.gif)
  This shows that the new event, "Math help" appear in the "Math help" group. Images below shows that the new event has been added to the database:
- ![Alt text](image-11.png)
- ![Alt text](image-12.png)
+ ![Before event created](screenshots/event_dtb_before.png)
+ ![After event created](screenshots/event_dtb_after.png)
  
 
  One thing that has to be fixed is that once the new event has been added, the user should be taken back to the event page, not the home page (this tells them immediately that the new event has been added). Mr. Copley complained about the inconsistency of the menu, so this has to be fixed real soon.
 
  The main header, which is the name of the app, is used as back button instead. This always takes the user back to the homepage once clicked.
 
- ![Previous page](back_home.gif)
+ ![Previous page]screenshots/(screenshots/back_home.gif)
 
  The header and menu of the app are now consistent on every page.
 
-![Event page redirect](create_event3.gif)
+![Event page redirect](screenshots/create_event_3.gif)
  This fixed how the user was not taken back to the event page. However, the new event added wa in the middle of the events list. This makes it harder to see whether the event has been added or not, so I need to make sure that the new event added appear at the top.
 
- ![Alt text](image-19.png) 
- This needs to be fixed, because we only want the owener to be able to add new event to the group
+ ![Anyone can create event now](screenshots/create_event_everyone.png) 
+ This needs to be fixed, because we only want the owner to be able to add new event to the group
 
  
 
@@ -170,16 +169,17 @@ While trying to created an event, I have noticed that the question box appeared 
 
 The user can join groups by inputting a unique code. To test this, I will input the unique code generated when the group is created. If the code I input matches what is sored in the database, then I should see that group popped up on my home page. I fit does not match, there should be a flash message informing me that what I have input is wrong.
 
-![Alt text](join_group1.gif)
-![Alt text](join_group2.gif)
+![Alt text](screenshots/join_group1.gif)
+![Alt text](screenshots/join_group2.gif)
 
 This is the database before joining the group
-![Alt text](image-16.png)
+![Before joining the group](screenshots/join_dtb_before.png)
 
 Now, I have join another group called "teams", which has a group id 3
-![Alt text](image-17.png)
+![After joining the group](screenshots/join_dtb_after.png)
 This user has been added to the membership table. On the website, we can also see that this user cannot see the delete button, since the user is not the owner of the group
-![Alt text](image-18.png)
+
+![No delete button](screenshots/delete_non_owner.png)
 
 
 
@@ -191,31 +191,30 @@ Users are allowed to delete the group.
 
 These are the data in my database tables before deleting a group.
 I am testing the functionality of my delete function by deleting "TEST 2"
-![Alt text](image-1.png)
-![Alt text](image-2.png)
 
-![Alt text](delete_group_2.gif)
+![Group table before delete](screenshots/delete_gtable_before.png)
+
+![Deleting group](screenshots/delete_group_2.gif)
 
 Here is what my table look like after the group TEST 2 has been deleted.
 
-![Alt text](image-3.png)
-![Alt text](image-4.png)
-![Alt text](image-5.png)
+![Group table after delete](screenshots/delete_gtable_after.png)
+
 It makes sense that if the group is deleted, then the events in that group are also removed from the database, and is the same with the membership table. So fixed this manually with more sql commands.
 
-Here is what it looks like aftef commands have been added.
+Here is what it looks like after commands have been added.
 Membership table before:
-![Alt text](image-6.png)
+![Membership table before delete](screenshots/delete_mtable_before.png)
 
-Events table before::
-![Alt text](image-7.png)
+Event table before::
+![Event table before delete](screenshots/delete_etable_before.png)
 
 After deleting another group "TEST" (where group_id = 1):
 Membership table after:
-![Alt text](image-8.png)
+![Membership table after delete](screenshots/delete_mtable_after.png)
 
 Events table after:
-![Alt text](image-9.png)
+![Event table after](screenshots/delete_etable_after.png)
 
 At the moment, anyone can delete the group but it would be more efficient if only the owner of the group can delete the group.
 
