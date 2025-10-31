@@ -98,7 +98,6 @@ To sum up, I need to:
 1. Create a page and buttons for users to join a group.
 2. Place the log-out button somewhere else and come up with a navigation bar layout.
 
-*IMPROVED FIGMA FLOW - PLACE THE FIGMA EMBED CODE HERE - MAKE SURE IT IS SET SO THAT EVERYONE CAN ACCESS IT*
 
 ### Changes 2
 I came out with 2 different options for the position of navigation bar:
@@ -117,7 +116,14 @@ After this, I went on to add the join group page and fixed the flow.
 
 Tools available on each page are different, and it also depends on whether you are an admin/owner of the group or not
 
+## Changes 3
+The color scheme that the end-user prefer is blue, so I gace my end user these 2 options of color palette;
 
+![Color palette 1](screenshots/color_palette_1.png)
+
+![Color palette 2](screenshots/color_palette_2.png)
+
+These 2 are very different and in fact, the second lean towards green rather than blue, but I thought it looked quite nice and so put it out there for the end user. 
 
 ---
 
@@ -144,6 +150,7 @@ Replace this text with notes any improvements you made as a result of the testin
 ---
 
 ## Sprint Review
+The sprint helped me plan my website, whether both for the functionality and appearance of it. I was also able to record some feedback from my end-user at this point, so I would be able to keep in mind about those feedback while creating the website.
 
-Replace this text with a statement about how the sprint has moved the project forward - key success point, any things that didn't go so well, etc.
+I was able to invent the key features of this website and think about how the layout of this website will look like.
 

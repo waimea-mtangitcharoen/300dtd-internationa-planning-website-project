@@ -32,14 +32,6 @@ init_datetime(app)  # Handle UTC dates in timestamps
 
 
 #-----------------------------------------------------------
-#Login page route
-#-----------------------------------------------------------
-# @app.get("/")
-# def index():
-#     return render_template("pages/login.jinja")
-
-
-#-----------------------------------------------------------
 #Homepage route
 #-----------------------------------------------------------
 @app.get("/")
@@ -147,13 +139,6 @@ def delete_an_event(id):
         return redirect(f"/group/{ group_id }")
         
 
-
-
-
-
-
-
-    
 #-----------------------------------------------------------
 # User create group form route
 #-----------------------------------------------------------
@@ -197,13 +182,13 @@ def create_group():
         return redirect("/")
 
 
-
 #-----------------------------------------------------------
 # User join form route
 #-----------------------------------------------------------
 @app.get("/group/join")
 def join_group_form():
     return render_template("pages/group_join_form.jinja")
+
 
 #-----------------------------------------------------------
 # User joining a group route
@@ -310,7 +295,6 @@ def show_all_events(id):
         else:
             return not_found_error()
         
-    
 
 #-----------------------------------------------------------
 # Root for event details page
@@ -348,14 +332,16 @@ def show_an_event(id):
         else:
             # No, so show error
             return not_found_error()
-        
- #-----------------------------------------------------------
+
+
+#-----------------------------------------------------------
 # User create event form route
 #-----------------------------------------------------------     
 @app.get("/group/<int:id>/newevent")
 def create_event_form(id):
     today = datetime.date.today()
     return render_template("pages/event_create_form.jinja", today=today, group_id=id)
+
 
 #-----------------------------------------------------------
 # Route for creating an event when create form submitted
@@ -364,27 +350,27 @@ def create_event_form(id):
 @login_required
 def create_event(id):
     # Get the data from the form
-    name = request.form.get("name")
-    date = request.form.get("date")
-    description = request.form.get("description")
-    question = request.form.get("question")
+    name = request.form.get("name","")
+    date = request.form.get("date", None)
+    description = request.form.get("description", None)
+    question = request.form.get("question", None)
     
     #Voting options
-    option_1 = request.form.get("option_1")
-    option_2 = request.form.get("option_2")
-    option_3 = request.form.get("option_3")
-    option_4 = request.form.get("option_4")
-    option_5 = request.form.get("option_5")
+    option_1 = request.form.get("option_1", None)
+    option_2 = request.form.get("option_2", None)
+    option_3 = request.form.get("option_3", None)
+    option_4 = request.form.get("option_4", None)
+    option_5 = request.form.get("option_5", None)
 
     # Sanitise any text data
     name = html.escape(name)
-    description = html.escape(description)
-    question = html.escape(question)
-    option_1 = html.escape(option_1)
-    option_2 = html.escape(option_2)
-    option_3 = html.escape(option_3)
-    option_4 = html.escape(option_4)
-    option_5 = html.escape(option_5)
+    description = html.escape(description) if description else None
+    question = html.escape(question) if question else None
+    option_1 = html.escape(option_1) if option_1 else None
+    option_2 = html.escape(option_2) if option_2 else None
+    option_3 = html.escape(option_3) if option_3 else None
+    option_4 = html.escape(option_4) if option_4 else None
+    option_5 = html.escape(option_5) if option_5 else None
 
     with connect_db() as client:
     
@@ -397,14 +383,6 @@ def create_event(id):
 
 
         return redirect(f"/group/{id}")
-
-
-
-
-
-
-
-
 
 
 #-----------------------------------------------------------

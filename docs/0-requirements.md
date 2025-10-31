@@ -83,11 +83,12 @@ This involve ensuring that all end-users are able to access the app/website.
 
 ### Relevance to the System
 
+For the user to be able to use the website, they should be able to access it. So this implication is important for my users. Users should be able to access it even if they haven't already had an account.
 
 
 ### Impact / Considerations
 
-Users should be able access my website through any devices. Mobile phone is used the most within my user group and it tends to be the most convenient device. So, my first priority is to make sure that users are able to access website through their phones, then later extend it to desktop or ipad
+Users should be able access my website through any devices. Mobile phone is used the most within my user group and it tends to be the most convenient device. So, my first priority is to make sure that users are able to access website through their phones, then later extend it to desktop or ipad.
 
 
 ---

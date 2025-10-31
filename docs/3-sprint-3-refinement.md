@@ -8,10 +8,7 @@ Develop the system until it is fully featured, with a refined UI and it satisfie
 ---
 
 ## Final Implementation
-
-The web app is fully implemented with a refined UI:
-
-**PLACE SCREENSHOTS AND/OR ANIMATED GIFS OF THE SYSTEM HERE**
+![Testing](testing1.gif)
 
 
 ---
@@ -19,9 +16,14 @@ The web app is fully implemented with a refined UI:
 ## Login and signup buttons layout
 
 I have given my end-user 3 options to choose from for how login and signup buttons on the login page should look.
-![alt text](screenshots/login_form_1.png)
+![Login form 1](screenshots/login_form_1.png)
+![Login form 2](screenshots/login_form_2.png)
+![login form 3](screenshots/login_form_3.png) 
+(This one is how the buttons were styled at originally)
+
+My end users like the second option.
+
 ![alt text](screenshots/login_form_2.png)
-![alt text](screenshots/login_form_3.png) - this one is how the buttons were styled at first
 
 
 
@@ -55,7 +57,34 @@ I have asked my end user about this, and one of them suggested that only the own
 
 ---
 
-## Group code
+## Event page
+
+![Event row before](screenshots/show_event_row_1.png)
+
+the line discontinue here for the row input, which inconsistent with the column label.
+
+![Event row after](screenshots/show_event_row_2.png)
+
+## Website color
+
+
+![Alt text](image.png)
+![Alt text](image-1.png)
+
+Recall how the join page would look like for each color palette.
+
+Some of the user like the green color palette one, while others like the blue one. One of the users that like the blue one said that both are nice but the fact that she enjoyed the back ground color of the blue one more. It gives more contrast, she said.
+
+So i decided to try change the background color of the green one on my website to light yellow.
+
+![Alt text](image-5.png)
+
+She really likes the yellow, and others agree. However, they said it would be nice if the yellow is a little bit lighter.
+
+![Alt text](image-4.png)
+
+They said this is good! I also need to fix the color of the label and position it to the centre of the form for this to match the design.
+
 
 
 

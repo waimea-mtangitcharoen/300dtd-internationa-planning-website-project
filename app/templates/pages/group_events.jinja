@@ -46,7 +46,7 @@
 
   <article>
 
-    <header>
+    <header class="filters">
       <h1>Group {{ group.name }}</h1>
 
       <div class="filter">
@@ -83,6 +83,8 @@
 
                 {% if session["user_id"] == group.owner %}
                   <td><a href="/delete/event/{{ event.id }}" class="delete">🗑</a></td>
+                {% else %}
+                  <td></td>
                 {% endif %}
             </tr>
 

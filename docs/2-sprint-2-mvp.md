@@ -49,7 +49,7 @@ This is when the login is unsucessful(invalid credentials):
 
 User can log out of their account (so others can login or to keep the privacy). The test can be done by clicking the log out button, and this should take the user back to the log in page.
 
-[Logout](screenshots/logout.gif)
+![Logout](screenshots/logout.gif)
 
 
 ---
@@ -68,11 +68,11 @@ Note that this sign-up button needs styling that goes along with the login form.
 
 The user is able to see groups that they are part of here. Also, only the user that is the owner of the group can delete the group.
 
-![alt text](image-20.png)
+![alt text](screenshots/home_code_1.png)
 
 Here I can see the code for each group. However, i am not the owner of the "Cookie taster" group, so I should not be able to see the group code. This means I have to add some conditions to my template.
 
-![alt text](image-21.png)
+![alt text](screenshots/home_code_2.png)
 I can no longer see cookie taster's group code, so this problem has been fixed. At the moment, the codes are very hard to see, so I should style them to make them neat and visible for the user.
 
 
@@ -86,13 +86,13 @@ I can no longer see cookie taster's group code, so this problem has been fixed. 
 
 Any user can create a group. Each group has got a unique code that can shared to other people to join the group. I will test this by creating the group myself. The expected outcome is that the gorup added is shown on the group page, and a unique code has been generated. 
 
-![Create group](create_group_1.gif)
+![Create group](screenshots/create_group_1.gif)
 
 Once the 'add" button is hit, user is taken back to the home page and the "New Group 8" can be display on the screen. However, I think i have chosen it to appear as ascending order, but it this is not convenient because if there are many groups, the user has to scroll to find the new group that has been added. It should be the first group on the very top after it has been added.
 
 This is when ordering the groups added have been fixed.
 The "New Group 9" is shown on the top of the group list.
-![Create group ordered](create_group_2.gif)
+![Create group ordered](screenshots/create_group_2.gif)
 
 
 ---
@@ -128,6 +128,10 @@ Options are listed, but there shouldn't be any button if there is nothing for th
 
 ![Voting options](screenshots/event_options.png)
 
+Since there is no details for the math tutoring event, there should not be a view button to go to another page.
+
+![Viewing details](screenshots/event_view_button.png)
+
 ---
 
 ## Create event page
@@ -139,7 +143,7 @@ While trying to created an event, I have noticed that the question box appeared 
 
 ![Null question box](screenshots/create_event_question.png)
 
-![Alt text](create_event_1.gif)
+![Create event](screenshots/create_event_1.gif)
  This shows that the new event, "Math help" appear in the "Math help" group. Images below shows that the new event has been added to the database:
  ![Before event created](screenshots/event_dtb_before.png)
  ![After event created](screenshots/event_dtb_after.png)
@@ -159,6 +163,10 @@ While trying to created an event, I have noticed that the question box appeared 
  ![Anyone can create event now](screenshots/create_event_everyone.png) 
  This needs to be fixed, because we only want the owner to be able to add new event to the group
 
+ I am not the owner of the group "teams", so when I clicked on the menu, I don't see "create event" button. I am not allowed to create event as a member.
+
+ ![Alt text](screenshots/create_event_owner.png)
+
  
 
 
@@ -173,9 +181,11 @@ The user can join groups by inputting a unique code. To test this, I will input 
 ![Alt text](screenshots/join_group2.gif)
 
 This is the database before joining the group
+
 ![Before joining the group](screenshots/join_dtb_before.png)
 
 Now, I have join another group called "teams", which has a group id 3
+
 ![After joining the group](screenshots/join_dtb_after.png)
 This user has been added to the membership table. On the website, we can also see that this user cannot see the delete button, since the user is not the owner of the group
 
@@ -204,25 +214,28 @@ It makes sense that if the group is deleted, then the events in that group are a
 
 Here is what it looks like after commands have been added.
 Membership table before:
+
 ![Membership table before delete](screenshots/delete_mtable_before.png)
 
-Event table before::
+Event table before:
+
 ![Event table before delete](screenshots/delete_etable_before.png)
 
 After deleting another group "TEST" (where group_id = 1):
 Membership table after:
+
 ![Membership table after delete](screenshots/delete_mtable_after.png)
 
 Events table after:
+
 ![Event table after](screenshots/delete_etable_after.png)
 
 At the moment, anyone can delete the group but it would be more efficient if only the owner of the group can delete the group.
-
 
 
 ---
 
 ## Sprint Review
 
-Replace this text with a statement about how the sprint has moved the project forward - key success point, any things that didn't go so well, etc.
+At this point, most of the features require for the website works, allowing the user to be able to use basic features of the website such as logging in, logging out, signing up, creating groups/events, and deleting groups/events. This sprint has allowed me to keep track of the important features of this website, and checking the website thoroughly while testing it.
 
