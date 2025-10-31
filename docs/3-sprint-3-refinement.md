@@ -8,8 +8,11 @@ Develop the system until it is fully featured, with a refined UI and it satisfie
 ---
 
 ## Final Implementation
-![Testing](testing1.gif)
+![Testing the whole system](screenshots/web_test.gif)
 
+Accounts for use:
+- Username: memimimoo Password: mimi3058
+- Username: user1 Password: user1
 
 ---
 
@@ -68,8 +71,8 @@ the line discontinue here for the row input, which inconsistent with the column 
 ## Website color
 
 
-![Alt text](image.png)
-![Alt text](image-1.png)
+![Join page background color 1](screenshots/join_color_1.png)
+![Join page background color 2](screenshots/join_color_2.png)
 
 Recall how the join page would look like for each color palette.
 
@@ -77,11 +80,11 @@ Some of the user like the green color palette one, while others like the blue on
 
 So i decided to try change the background color of the green one on my website to light yellow.
 
-![Alt text](image-5.png)
+![Alt text](screenshots/web_bgcolor_1.png)
 
 She really likes the yellow, and others agree. However, they said it would be nice if the yellow is a little bit lighter.
 
-![Alt text](image-4.png)
+![Alt text](screenshots/web_bgcolor_2.png)
 
 They said this is good! I also need to fix the color of the label and position it to the centre of the form for this to match the design.
 

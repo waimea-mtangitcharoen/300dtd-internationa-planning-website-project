@@ -60,11 +60,11 @@ A new field "code" has been added to the group table of the database. This is to
 
 The data type for username (users table) and owner (groups table) are wrong, They both should be text and not integer.
 
-![Alt text](screenshots/2_DB.png)
+![Database 2](screenshots/2_DB.png)
 
 The data type for the owner (groups table) is wrong. It should match the data type of the id of the users table as it acts as the foreign key, so I have to update my database.
 
-![Alt text](screenshots/3_DB.png)
+![Database 3](screenshots/3_DB.png)
 
 
 ---
@@ -117,7 +117,7 @@ After this, I went on to add the join group page and fixed the flow.
 Tools available on each page are different, and it also depends on whether you are an admin/owner of the group or not
 
 ## Changes 3
-The color scheme that the end-user prefer is blue, so I gace my end user these 2 options of color palette;
+The color scheme that the end-user prefer is blue, so I gave my end user these 2 options of color palette;
 
 ![Color palette 1](screenshots/color_palette_1.png)
 
@@ -130,21 +130,13 @@ These 2 are very different and in fact, the second lean towards green rather tha
 
 ## Refined UI Prototype
 
-Having established the layout of the UI screens, the prototype was refined visually, in terms of colour, fonts, etc.
+This is with the first color palette:
 
-This Figma demo shows the UI with refinements applied:
+<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/proto/uGCsdR37WTSxrzPNeulhOo/website-v6--Copy-?node-id=4-5&p=f&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=4%3A2&embed-host=share" allowfullscreen></iframe>
 
-*FIGMA REFINED PROTOTYPE - PLACE THE FIGMA EMBED CODE HERE - MAKE SURE IT IS SET SO THAT EVERYONE CAN ACCESS IT*
+This is with the second color palette:
 
-### Testing
-
-Replace this text with notes about what you did to test the UI flow and the outcome of the testing.
-
-### Changes / Improvements
-
-Replace this text with notes any improvements you made as a result of the testing.
-
-*FIGMA IMPROVED REFINED PROTOTYPE - PLACE THE FIGMA EMBED CODE HERE - MAKE SURE IT IS SET SO THAT EVERYONE CAN ACCESS IT*
+<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/proto/i97iqXxuwIXiCHv6Vqffl7/website-v6--Copy---Copy-?node-id=6-104&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=4%3A2&embed-host=share" allowfullscreen></iframe>
 
 
 ---

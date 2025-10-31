@@ -75,12 +75,14 @@
             <tr>
                 <td><strong>{{ event.name }}</strong></td>
                 <td>{{ event.date }}</td>
+                {# If there i no description, there is no need for the view button #}
                 {% if event.description %}
                   <td><a href="/event/{{ event.id }}" class="view-button" role="button">View</a>
                 {% else %}
                   <td></td>  {# keeps table structure clean #}
                 {% endif %}
-
+                
+                {# Only group owner can create event #}
                 {% if session["user_id"] == group.owner %}
                   <td><a href="/delete/event/{{ event.id }}" class="delete">🗑</a></td>
                 {% else %}

@@ -49,6 +49,7 @@
                 <li>
                     <a href="/group/{{ group.id }}" class="group-button"role="button">
                         <strong>{{ group.name }}</strong>
+                        {# Can only see group code if you are the owner of the group #}
                         {% if session.user_id == group.owner %}
 
                           <p>{{ group.code }}</p>
